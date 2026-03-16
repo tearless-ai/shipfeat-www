@@ -33,44 +33,46 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0B0F19]">
       {/* Nav */}
-      <header className="sticky top-0 z-50 flex items-center justify-between px-8 lg:px-12 py-4 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/30">
-        <a href="/" className="flex items-center gap-2">
-          <Rocket className="text-[#FF4C29]" size={22} />
-          <span className="font-bold text-lg tracking-tight text-white">
-            ShipFeat
-          </span>
-        </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
-          <a href="#how-it-works" className="hover:text-white transition-colors">
-            How it works
+      <header className="sticky top-0 z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/30">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-4">
+          <a href="/" className="flex items-center gap-2">
+            <Rocket className="text-[#FF4C29]" size={22} />
+            <span className="font-bold text-lg tracking-tight text-white">
+              ShipFeat
+            </span>
           </a>
-          <a href="/pricing" className="hover:text-white transition-colors">
-            Pricing
-          </a>
-          <a href="/about" className="hover:text-white transition-colors">
-            About
-          </a>
-        </nav>
-        <div className="flex items-center gap-3">
-          <a
-            href={`${APP_URL}/sign-in`}
-            className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            Sign in
-          </a>
-          <a
-            href={`${APP_URL}/sign-up`}
-            className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
-          >
-            Get started
-          </a>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
+            <a href="#how-it-works" className="hover:text-white transition-colors">
+              How it works
+            </a>
+            <a href="/pricing" className="hover:text-white transition-colors">
+              Pricing
+            </a>
+            <a href="/about" className="hover:text-white transition-colors">
+              About
+            </a>
+          </nav>
+          <div className="flex items-center gap-3">
+            <a
+              href={`${APP_URL}/sign-in`}
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            >
+              Sign in
+            </a>
+            <a
+              href={`${APP_URL}/sign-up`}
+              className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
+            >
+              Get started
+            </a>
+          </div>
         </div>
       </header>
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="px-8 lg:px-12 pt-28 pb-24">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+        <section className="pt-28 pb-24">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
               Turn feature requests into
               <br />
@@ -101,8 +103,8 @@ export default function Home() {
         </section>
 
         {/* How it works */}
-        <section id="how-it-works" className="px-8 lg:px-12 py-24 bg-[#0D1117]">
-          <div className="max-w-5xl mx-auto">
+        <section id="how-it-works" className="py-24 bg-[#0D1117]">
+          <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 From feedback to shipped in minutes
@@ -151,8 +153,8 @@ export default function Home() {
         </section>
 
         {/* Differentiators */}
-        <section className="px-8 lg:px-12 py-24">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-24">
+          <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Built for teams that move fast
@@ -184,8 +186,8 @@ export default function Home() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="px-8 lg:px-12 py-24 bg-[#0D1117]">
-          <div className="max-w-xl mx-auto text-center">
+        <section className="py-24 bg-[#0D1117]">
+          <div className="max-w-xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Ship what your users are asking for
             </h2>
@@ -204,8 +206,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="px-8 lg:px-12 py-8 border-t border-gray-800/30">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <footer className="border-t border-gray-800/30">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-8">
           <a href="/" className="flex items-center gap-2 text-gray-500 hover:text-gray-400 transition-colors">
             <Rocket size={16} className="text-[#FF4C29]" />
             <span className="text-sm font-medium">ShipFeat</span>
