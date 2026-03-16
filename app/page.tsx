@@ -2,21 +2,14 @@ import {
   Rocket,
   ArrowRight,
   MessageSquareText,
-  Sparkles,
-  GitPullRequest,
-  Eye,
-  CheckCircle2,
   Shield,
-  Zap,
-  Clock,
-  DollarSign,
-  Terminal,
+  Key,
+  Eye,
 } from "lucide-react";
-import { HowItWorks } from "@/components/landing/HowItWorks";
 
 const APP_URL = "https://dev.shipfeat.ai";
 
-function FeatureCard({
+function Differentiator({
   icon: Icon,
   title,
   description,
@@ -26,21 +19,14 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="rounded-lg border border-gray-800 bg-[#141B2D] p-6 hover:border-gray-700 transition-colors">
-      <div className="p-2 rounded-lg bg-[#FF4C29]/10 w-fit mb-4">
-        <Icon size={20} className="text-[#FF4C29]" />
+    <div className="flex items-start gap-4">
+      <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 shrink-0">
+        <Icon size={18} className="text-[#FF4C29]" />
       </div>
-      <h3 className="text-sm font-semibold text-white mb-2">{title}</h3>
-      <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="text-center">
-      <p className="text-3xl font-bold text-white">{value}</p>
-      <p className="text-sm text-gray-400 mt-1">{label}</p>
+      <div>
+        <h3 className="text-sm font-semibold text-white mb-1">{title}</h3>
+        <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
+      </div>
     </div>
   );
 }
@@ -50,16 +36,22 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-[#0B0F19]">
       {/* Nav */}
       <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/50">
-        <div className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <Rocket className="text-[#FF4C29]" size={22} />
           <span className="font-bold text-lg tracking-tight text-white">
             ShipFeat
           </span>
-        </div>
+        </a>
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
-          <a href="#how-it-works" className="hover:text-white transition-colors">How it works</a>
-          <a href="#features" className="hover:text-white transition-colors">Features</a>
-          <a href="/pricing" className="hover:text-white transition-colors">Pricing</a>
+          <a href="#how-it-works" className="hover:text-white transition-colors">
+            How it works
+          </a>
+          <a href="/pricing" className="hover:text-white transition-colors">
+            Pricing
+          </a>
+          <a href="/about" className="hover:text-white transition-colors">
+            About
+          </a>
         </nav>
         <div className="flex items-center gap-3">
           <a
@@ -79,183 +71,130 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="px-6 pt-20 pb-16 text-center">
+        <section className="px-6 pt-24 pb-20 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4C29]/10 border border-[#FF4C29]/20 text-[#FF4C29] text-xs font-medium">
-              <Zap size={12} />
-              Now with Vercel preview deployments
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-              Your users ask.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+              Turn feature requests into
               <br />
-              <span className="text-[#FF4C29]">AI ships.</span>
+              pull requests.{" "}
+              <span className="text-[#FF4C29]">Automatically.</span>
             </h1>
-            <p className="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-              Drop a widget in your app. Users submit enhancement requests. AI
-              reads your codebase, writes the code, opens a PR with a live
-              preview. You just approve.
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Your users describe what they need. ShipFeat reads your codebase,
+              generates the code, and opens a PR with a live preview. You just
+              review and merge.
             </p>
-            <div className="flex items-center justify-center gap-4 pt-4">
+            <div className="flex items-center justify-center gap-4 pt-2">
               <a
                 href={`${APP_URL}/sign-up`}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
               >
-                Start for free
+                Get started free
                 <ArrowRight size={16} />
               </a>
               <a
                 href="#how-it-works"
-                className="px-6 py-3 text-gray-300 hover:text-white text-sm font-medium transition-colors"
+                className="px-6 py-3 text-gray-400 hover:text-white text-sm font-medium transition-colors"
               >
-                See how it works ↓
+                See how it works
               </a>
             </div>
-            <p className="text-xs text-gray-600">
-              Free during beta · No credit card required
-            </p>
           </div>
         </section>
 
-        {/* How it works — auto-advancing carousel */}
-        <HowItWorks />
-
-        {/* Stats */}
-        <section className="px-6 py-16 border-y border-gray-800">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat value="< 1h" label="Avg turnaround time" />
-            <Stat value="$150" label="Saved per enhancement" />
-            <Stat value="3 min" label="Widget to PR" />
-            <Stat value="0" label="Engineers needed" />
-          </div>
-        </section>
-
-        {/* Features grid */}
-        <section id="features" className="px-6 py-20 bg-[#141B2D]/50">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-3">
-                Built for SaaS teams who move fast
+        {/* How it works */}
+        <section id="how-it-works" className="px-6 py-20 border-t border-gray-800/50">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                From feedback to shipped in minutes
               </h2>
-              <p className="text-gray-400">
-                Everything you need to close the loop between user feedback and
-                shipped features.
+              <p className="text-gray-400 max-w-lg mx-auto">
+                A user submits a request. AI analyzes your code, writes the
+                changes, and opens a PR. You review and merge.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <FeatureCard
+            {/* Video/GIF placeholder */}
+            <div className="relative aspect-[16/9] rounded-lg border border-gray-800 bg-[#141B2D] overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-[#FF4C29]/10 flex items-center justify-center mx-auto">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="text-[#FF4C29] ml-1"
+                    >
+                      <path
+                        d="M8 5.14v14.72a1 1 0 001.5.86l11.5-7.36a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-gray-500">
+                    Product demo — coming soon
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Inline CTA after demo */}
+            <div className="text-center mt-8">
+              <a
+                href={`${APP_URL}/sign-up`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                Try it yourself
+                <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Differentiators */}
+        <section className="px-6 py-20 border-t border-gray-800/50">
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <Differentiator
                 icon={MessageSquareText}
-                title="Embeddable Widget"
-                description="A lightweight, shadow DOM-isolated widget that works on any site. Dark mode, mobile responsive, under 13KB."
+                title="A widget that lives in your app"
+                description="Users submit enhancement requests without leaving your product. Takes 10 seconds, no account needed. You control which domains can submit."
               />
-              <FeatureCard
-                icon={Sparkles}
-                title="AI Spec Engine"
-                description="Reads your entire codebase and generates a structured change spec with file-level granularity and acceptance criteria."
-              />
-              <FeatureCard
-                icon={Terminal}
-                title="Live Build Terminal"
-                description="Watch the AI work in real-time. 8-stage progress from branch creation to PR — it's like watching an engineer code."
-              />
-              <FeatureCard
-                icon={Eye}
-                title="Vercel Previews"
-                description="Every PR gets a live preview deployment. See the change running before you merge. Works with Vercel out of the box."
-              />
-              <FeatureCard
-                icon={GitPullRequest}
-                title="GitHub Native"
-                description="GitHub App integration with granular repo-level permissions. PRs come from ShipFeat, not a random PAT."
-              />
-              <FeatureCard
+              <Differentiator
                 icon={Shield}
-                title="Origin Validation"
-                description="Widget requests are validated against your allowed domains. No one can spam your project from an unauthorized site."
+                title="Nothing ships without your approval"
+                description="You review the AI's plan before any code is written. You review the PR and live preview before anything merges. Full control at every step."
               />
-              <FeatureCard
-                icon={CheckCircle2}
-                title="Two Approval Gates"
-                description="Gate 1: review the AI's plan before any code. Gate 2: review the PR + live preview before merging. You're always in control."
+              <Differentiator
+                icon={Key}
+                title="Your AI, your cost, your choice"
+                description="Bring your own API key from Anthropic or OpenAI. Pick the model that fits your budget and quality bar. ShipFeat never touches your key."
               />
-              <FeatureCard
-                icon={Clock}
-                title="Value Dashboard"
-                description="Track shipped enhancements, turnaround time, and estimated cost savings. Know exactly how much value ShipFeat delivers."
-              />
-              <FeatureCard
-                icon={DollarSign}
-                title="Bring Your Own AI"
-                description="Works with Anthropic Claude and OpenAI. Use your own API key. Pick the model — from fast Haiku to powerful Opus."
+              <Differentiator
+                icon={Eye}
+                title="Live preview before you merge"
+                description="Every PR gets a Vercel preview deployment. See the actual change running on a real URL before it hits production."
               />
             </div>
           </div>
         </section>
 
-        {/* Target audience */}
-        <section className="px-6 py-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-3">
-              Perfect for SMB SaaS teams
-            </h2>
-            <p className="text-gray-400 mb-12 max-w-lg mx-auto">
-              If your backlog is longer than your sprint capacity and your users
-              keep asking for small improvements — ShipFeat is for you.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <div className="rounded-lg border border-gray-800 bg-[#141B2D] p-6">
-                <p className="text-2xl mb-3">🚀</p>
-                <h3 className="text-sm font-semibold text-white mb-2">
-                  Startups (5-20 people)
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  Your 3 engineers are building the core product. ShipFeat
-                  handles the UI tweaks, alignment fixes, and small improvements
-                  your users keep asking for.
-                </p>
-              </div>
-              <div className="rounded-lg border border-gray-800 bg-[#141B2D] p-6">
-                <p className="text-2xl mb-3">⚡</p>
-                <h3 className="text-sm font-semibold text-white mb-2">
-                  Modern Codebases
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  Next.js, React, Vue — if your codebase is modern and
-                  well-structured, ShipFeat&apos;s AI will understand it and
-                  make the right changes.
-                </p>
-              </div>
-              <div className="rounded-lg border border-gray-800 bg-[#141B2D] p-6">
-                <p className="text-2xl mb-3">💰</p>
-                <h3 className="text-sm font-semibold text-white mb-2">
-                  Budget-Conscious
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  At ~$150/hr, a developer spends 3+ hours on a small
-                  enhancement. ShipFeat does it in minutes for the cost of an
-                  API call.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="px-6 py-20">
-          <div className="max-w-2xl mx-auto text-center rounded-lg border border-[#FF4C29]/30 bg-[#FF4C29]/5 p-12">
-            <Rocket size={32} className="text-[#FF4C29] mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-3">
-              Ready to ship faster?
+        {/* Bottom CTA */}
+        <section className="px-6 py-20 border-t border-gray-800/50">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              Ship what your users are asking for
             </h2>
             <p className="text-gray-400 mb-8">
-              Set up in 5 minutes. First 10 enhancements free.
+              Free while in beta. Set up in under 5 minutes.
             </p>
             <a
               href={`${APP_URL}/sign-up`}
               className="inline-flex items-center gap-2 px-8 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
             >
-              Get started
+              Get started free
               <ArrowRight size={16} />
             </a>
           </div>
@@ -265,14 +204,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-6 py-8 border-t border-gray-800">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 text-gray-500">
+          <a href="/" className="flex items-center gap-2 text-gray-500 hover:text-gray-400 transition-colors">
             <Rocket size={16} className="text-[#FF4C29]" />
             <span className="text-sm font-medium">ShipFeat</span>
-          </div>
-          <div className="flex items-center gap-6 text-xs text-gray-600">
-            <a href="/pricing" className="hover:text-gray-400 transition-colors">Pricing</a>
-            <span>© 2026 Tearless AI · Built with 🧡</span>
-          </div>
+          </a>
+          <nav className="flex items-center gap-6 text-xs text-gray-600">
+            <a href="/pricing" className="hover:text-gray-400 transition-colors">
+              Pricing
+            </a>
+            <a href="/about" className="hover:text-gray-400 transition-colors">
+              About
+            </a>
+            <span>© 2026 Tearless AI</span>
+          </nav>
         </div>
       </footer>
     </div>
