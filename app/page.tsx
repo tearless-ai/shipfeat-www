@@ -19,14 +19,12 @@ function Differentiator({
   description: string;
 }) {
   return (
-    <div className="flex items-start gap-4">
-      <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 shrink-0">
-        <Icon size={18} className="text-[#FF4C29]" />
+    <div className="rounded-lg border border-gray-800 bg-[#141B2D] p-6 hover:border-gray-700 transition-colors">
+      <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-4">
+        <Icon size={20} className="text-[#FF4C29]" />
       </div>
-      <div>
-        <h3 className="text-sm font-semibold text-white mb-1">{title}</h3>
-        <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
-      </div>
+      <h3 className="text-[15px] font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-gray-400 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -156,7 +154,7 @@ export default function Home() {
         {/* Differentiators */}
         <section className="px-6 py-20 border-t border-gray-800/50">
           <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Differentiator
                 icon={MessageSquareText}
                 title="A widget that lives in your app"
