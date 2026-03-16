@@ -6,7 +6,7 @@ import {
   Key,
   Eye,
 } from "lucide-react";
-import { ProductDemo } from "@/components/ProductDemo";
+import { FlowDiagram } from "@/components/FlowDiagram";
 
 const APP_URL = "https://dev.shipfeat.ai";
 
@@ -103,30 +103,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How it works */}
+        {/* How it works — animated flow */}
         <section id="how-it-works" className="py-24 bg-[#0D1117]">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 From feedback to shipped in minutes
               </h2>
-              <p className="text-gray-400 max-w-xl mx-auto">
-                A user submits a request. AI analyzes your code, writes the
-                changes, and opens a PR. You review and merge.
+              <p className="text-gray-400">
+                No tickets. No sprint planning. No engineer assignments.
               </p>
             </div>
-
-            <ProductDemo />
-
-            <div className="text-center mt-10">
-              <a
-                href={`${APP_URL}/sign-up`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
-              >
-                Try it yourself
-                <ArrowRight size={14} />
-              </a>
-            </div>
+            <FlowDiagram />
           </div>
         </section>
 
