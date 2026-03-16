@@ -6,6 +6,7 @@ import {
   Key,
   Eye,
 } from "lucide-react";
+import { ProductDemo } from "@/components/ProductDemo";
 
 const APP_URL = "https://dev.shipfeat.ai";
 
@@ -115,30 +116,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Video/GIF placeholder */}
-            <div className="relative aspect-[16/9] rounded-xl border border-gray-800/60 bg-[#141B2D] overflow-hidden shadow-2xl shadow-black/20">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-[#FF4C29]/10 flex items-center justify-center mx-auto cursor-pointer hover:bg-[#FF4C29]/20 transition-colors">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="text-[#FF4C29] ml-1"
-                    >
-                      <path
-                        d="M8 5.14v14.72a1 1 0 001.5.86l11.5-7.36a1 1 0 000-1.72L9.5 4.28A1 1 0 008 5.14z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-500">
-                    Product demo — coming soon
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ProductDemo />
 
             <div className="text-center mt-10">
               <a
