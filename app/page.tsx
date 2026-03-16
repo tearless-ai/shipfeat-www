@@ -115,6 +115,16 @@ export default function Home() {
               </p>
             </div>
             <FlowDiagram />
+
+            <div className="text-center mt-14">
+              <a
+                href={`${APP_URL}/sign-up`}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                Try it yourself
+                <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
         </section>
 
