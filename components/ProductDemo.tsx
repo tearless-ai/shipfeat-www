@@ -5,32 +5,32 @@ import { useState, useEffect, useCallback } from "react";
 const STEPS = [
   {
     label: "Widget",
-    caption: "Users click the feedback button in your app",
-    image: "/screenshots/01-widget-app.jpg",
+    caption: "A feedback button lives inside your app. Your users click it when they want something improved.",
+    image: "/screenshots/01-widget.jpg",
     duration: 4000,
   },
   {
     label: "Submit",
-    caption: "They describe the enhancement they want — 10 seconds, no account",
-    image: "/screenshots/02-widget-open.jpg",
+    caption: "They describe what they need in plain English. No account required — takes 10 seconds.",
+    image: "/screenshots/02-submit.jpg",
     duration: 5000,
   },
   {
-    label: "Spec",
-    caption: "AI reads your codebase and generates a structured change plan",
-    image: "/screenshots/03-spec-review.jpg",
+    label: "Review",
+    caption: "AI reads your codebase and generates a plan — which files to change, what to do, and acceptance criteria. You approve before any code is written.",
+    image: "/screenshots/03-review.jpg",
     duration: 6000,
   },
   {
     label: "Build",
-    caption: "Watch the AI write code, commit, and open a PR in real-time",
-    image: "/screenshots/05-build-terminal.jpg",
+    caption: "Watch in real-time as AI creates a branch, generates code, commits, pushes, and opens a PR — all in under a minute.",
+    image: "/screenshots/04-build.jpg",
     duration: 5000,
   },
   {
     label: "Ship",
-    caption: "Review the dashboard, merge when ready — you're always in control",
-    image: "/screenshots/04-dashboard.jpg",
+    caption: "Your dashboard tracks everything: shipped enhancements, turnaround time, and estimated dev hours saved.",
+    image: "/screenshots/05-dashboard.jpg",
     duration: 5000,
   },
 ];
@@ -76,23 +76,25 @@ export function ProductDemo() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Screenshot */}
-      <div className="relative aspect-[16/9] bg-[#0B0F19] overflow-hidden">
+      {/* Step labels — top */}
+      <div className="flex items-center gap-1 px-5 pt-5 pb-3">
         {STEPS.map((step, i) => (
-          <img
+          <button
             key={i}
-            src={step.image}
-            alt={step.caption}
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 ${
-              i === active ? "opacity-100" : "opacity-0"
+            onClick={() => goTo(i)}
+            className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all ${
+              i === active
+                ? "bg-[#FF4C29]/10 text-[#FF4C29] border border-[#FF4C29]/30"
+                : "text-gray-500 hover:text-gray-300 border border-transparent"
             }`}
-            loading={i === 0 ? "eager" : "lazy"}
-          />
+          >
+            {step.label}
+          </button>
         ))}
       </div>
 
       {/* Progress bars */}
-      <div className="flex gap-1 px-5 pt-4">
+      <div className="flex gap-1 px-5">
         {STEPS.map((_, i) => (
           <button
             key={i}
@@ -116,24 +118,24 @@ export function ProductDemo() {
         ))}
       </div>
 
-      {/* Caption + step labels */}
+      {/* Screenshot */}
+      <div className="relative aspect-[16/9] bg-[#0B0F19] overflow-hidden mt-3 mx-5">
+        {STEPS.map((step, i) => (
+          <img
+            key={i}
+            src={step.image}
+            alt={step.caption}
+            className={`absolute inset-0 w-full h-full object-cover object-top rounded-lg transition-opacity duration-500 ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+            loading={i === 0 ? "eager" : "lazy"}
+          />
+        ))}
+      </div>
+
+      {/* Caption */}
       <div className="px-5 pt-4 pb-5">
-        <p className="text-sm text-gray-300 mb-4">{STEPS[active].caption}</p>
-        <div className="flex items-center gap-2">
-          {STEPS.map((step, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                i === active
-                  ? "bg-[#FF4C29]/10 text-[#FF4C29] border border-[#FF4C29]/30"
-                  : "text-gray-500 hover:text-gray-300"
-              }`}
-            >
-              {step.label}
-            </button>
-          ))}
-        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">{STEPS[active].caption}</p>
       </div>
     </div>
   );
