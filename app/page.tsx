@@ -332,21 +332,36 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-xl mx-auto px-8 lg:px-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            Ship what your users are asking for
-          </h2>
-          <p className="text-gray-400 mb-8">
-            Free while in beta. Set up in under 5 minutes.
+      <section className="py-32 relative overflow-hidden">
+        {/* Gradient glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[800px] h-[400px] rounded-full bg-[#FF4C29]/[0.07] blur-[120px]" />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-8 lg:px-12 text-center relative z-10">
+          <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-6">
+            Ready to ship?
           </p>
-          <a
-            href={`${APP_URL}/sign-up`}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
-          >
-            Get started free
-            <ArrowRight size={16} />
-          </a>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
+            Stop triaging. Start shipping.
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Your users are already telling you what to build. ShipFeat turns
+            their words into working code — reviewed, previewed, and ready to
+            merge. Free while in beta.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`${APP_URL}/sign-up`}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
+            >
+              Get started free
+              <ArrowRight size={18} />
+            </a>
+            <span className="text-sm text-gray-500">
+              No credit card · 5 minute setup · Cancel anytime
+            </span>
+          </div>
         </div>
       </section>
     </>
