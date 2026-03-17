@@ -1,13 +1,11 @@
 import {
-  Rocket,
   ArrowRight,
   Check,
   Zap,
   Building2,
   Crown,
 } from "lucide-react";
-
-const APP_URL = "https://dev.shipfeat.ai";
+import { APP_URL } from "@/lib/constants";
 
 function PricingCard({
   name,
@@ -32,15 +30,22 @@ function PricingCard({
 }) {
   return (
     <div
-      className={`rounded-lg border p-8 flex flex-col ${
+      className={`rounded-xl border p-8 flex flex-col ${
         highlighted
           ? "border-[#FF4C29]/50 bg-[#FF4C29]/5 ring-1 ring-[#FF4C29]/20"
-          : "border-gray-800 bg-[#141B2D]"
+          : "border-gray-800/60 bg-[#141B2D]"
       }`}
     >
       <div className="flex items-center gap-2 mb-4">
-        <div className={`p-2 rounded-lg ${highlighted ? "bg-[#FF4C29]/10" : "bg-gray-800"}`}>
-          <Icon size={18} className={highlighted ? "text-[#FF4C29]" : "text-gray-400"} />
+        <div
+          className={`p-2 rounded-lg ${
+            highlighted ? "bg-[#FF4C29]/10" : "bg-gray-800"
+          }`}
+        >
+          <Icon
+            size={18}
+            className={highlighted ? "text-[#FF4C29]" : "text-gray-400"}
+          />
         </div>
         <h3 className="text-lg font-bold text-white">{name}</h3>
       </div>
@@ -53,7 +58,7 @@ function PricingCard({
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
             <Check size={16} className="text-emerald-400 shrink-0 mt-0.5" />
-            {feature}
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
@@ -74,33 +79,10 @@ function PricingCard({
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0F19]">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800/50">
-        <a href="/" className="flex items-center gap-2">
-          <Rocket className="text-[#FF4C29]" size={22} />
-          <span className="font-bold text-lg tracking-tight text-white">
-            ShipFeat
-          </span>
-        </a>
-        <div className="flex items-center gap-3">
-          <a
-            href={`${APP_URL}/sign-in`}
-            className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            Sign in
-          </a>
-          <a
-            href={`${APP_URL}/sign-up`}
-            className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
-          >
-            Get started
-          </a>
-        </div>
-      </header>
-
-      <main className="flex-1 px-6 py-20">
-        <div className="max-w-5xl mx-auto">
+    <>
+      {/* Hero */}
+      <section className="pt-28 pb-24">
+        <div className="max-w-6xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Simple, transparent pricing
@@ -164,47 +146,58 @@ export default function PricingPage() {
               href="mailto:dinesh@tearless.ai?subject=ShipFeat Enterprise"
             />
           </div>
+        </div>
+      </section>
 
-          {/* FAQ-style bottom */}
-          <div className="mt-20 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">
-              Frequently asked
-            </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1">Do I need to provide my own AI API key?</h3>
-                <p className="text-sm text-gray-400">Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring your own key and choose your model. This means you control costs and quality.</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1">What happens if the AI writes bad code?</h3>
-                <p className="text-sm text-gray-400">Nothing ships without your approval. You review the spec before code is written, and review the PR (with a live preview) before merging. Two gates, full control.</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1">What frameworks are supported?</h3>
-                <p className="text-sm text-gray-400">ShipFeat works best with modern JavaScript/TypeScript codebases — Next.js, React, Vue, and similar. The AI reads your code structure to generate changes.</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-white mb-1">Can I cancel anytime?</h3>
-                <p className="text-sm text-gray-400">Yes. No contracts, no commitments. Cancel from your dashboard and you won&apos;t be charged again.</p>
-              </div>
+      {/* FAQ */}
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-2xl mx-auto px-8 lg:px-12">
+          <h2 className="text-2xl font-bold text-white text-center mb-10">
+            Frequently asked
+          </h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">
+                Do I need to provide my own AI API key?
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring
+                your own key and choose your model. This means you control costs
+                and quality.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">
+                What happens if the AI writes bad code?
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Nothing ships without your approval. You review the spec before
+                code is written, and review the PR (with a live preview) before
+                merging. Two gates, full control.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">
+                What frameworks are supported?
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                ShipFeat works best with modern JavaScript/TypeScript codebases
+                — Next.js, React, Vue, and similar. The AI reads your code
+                structure to generate changes.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white mb-1.5">
+                Can I cancel anytime?
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Yes. No contracts, no commitments. Cancel from your dashboard
+                and you won&apos;t be charged again.
+              </p>
             </div>
           </div>
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="px-6 py-8 border-t border-gray-800">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 text-gray-500">
-            <Rocket size={16} className="text-[#FF4C29]" />
-            <span className="text-sm font-medium">ShipFeat</span>
-          </a>
-          <div className="flex items-center gap-6 text-xs text-gray-600">
-            <a href="/pricing" className="hover:text-gray-400 transition-colors">Pricing</a>
-            <span>© 2026 Tearless AI · Built with 🧡</span>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </section>
+    </>
   );
 }
