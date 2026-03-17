@@ -10,7 +10,7 @@ import {
   Globe,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
-import { APP_URL } from "@/lib/constants";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -31,10 +31,10 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-4 pt-4">
             <a
-              href={`${APP_URL}/sign-up`}
+              href="#waitlist"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
             >
-              Get started free
+              Join the Waitlist
               <ArrowRight size={16} />
             </a>
             <a
@@ -500,7 +500,7 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-32 relative overflow-hidden">
+      <section id="waitlist" className="py-32 relative overflow-hidden">
         {/* Gradient glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[800px] h-[400px] rounded-full bg-[#FF4C29]/[0.07] blur-[120px]" />
@@ -508,7 +508,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto px-8 lg:px-12 text-center relative z-10">
           <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-6">
-            Ready to ship?
+            Get Early Access
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
             Stop triaging. Start shipping.
@@ -518,18 +518,7 @@ export default function Home() {
             their words into working code — reviewed, previewed, and ready to
             merge. Free while in beta.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={`${APP_URL}/sign-up`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
-            >
-              Get started free
-              <ArrowRight size={18} />
-            </a>
-            <span className="text-sm text-gray-500">
-              No credit card · 5 minute setup · Cancel anytime
-            </span>
-          </div>
+          <WaitlistForm />
         </div>
       </section>
     </>

@@ -1,5 +1,4 @@
 import { Rocket } from "lucide-react";
-import { APP_URL } from "@/lib/constants";
 
 export function Nav() {
   return (
@@ -24,16 +23,10 @@ export function Nav() {
         </nav>
         <div className="flex items-center gap-3">
           <a
-            href={`${APP_URL}/sign-in`}
-            className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
-          >
-            Sign in
-          </a>
-          <a
-            href={`${APP_URL}/sign-up`}
+            href="/#waitlist"
             className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
           >
-            Get started
+            Join Waitlist
           </a>
         </div>
       </div>
