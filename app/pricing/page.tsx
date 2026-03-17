@@ -118,7 +118,7 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
         <div className="max-w-3xl mx-auto px-8 lg:px-12">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
               FAQ
             </p>
@@ -126,7 +126,7 @@ export default function PricingPage() {
               Got questions?
             </h2>
           </div>
-          <div className="divide-y divide-gray-800/60 rounded-xl border border-gray-800/60 bg-[#0B0F19] overflow-hidden">
+          <div className="space-y-3">
             <FAQItem
               q="What counts as a feature?"
               a="A feature is counted when you generate a spec from a user's request. Widget submissions are free and unlimited — you only pay when you ask the AI to plan and build."
@@ -186,23 +186,24 @@ function Feature({
 
 function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   return (
-    <details className="group">
-      <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-[#141B2D]/50 transition-colors">
-        <span className="text-sm font-medium text-white">{q}</span>
-        <span className="shrink-0 w-5 h-5 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 group-open:border-[#FF4C29]/40 group-open:text-[#FF4C29] transition-colors">
+    <details className="group rounded-xl border border-gray-800/40 bg-[#0B0F19] hover:border-gray-700/60 transition-all duration-200 open:border-[#FF4C29]/20 open:bg-[#FF4C29]/[0.02]">
+      <summary className="flex items-center justify-between gap-6 px-7 py-6 cursor-pointer list-none select-none">
+        <span className="text-base font-medium text-gray-200 group-open:text-white transition-colors">{q}</span>
+        <span className="shrink-0 w-7 h-7 rounded-lg bg-[#141B2D] border border-gray-800/60 flex items-center justify-center text-gray-500 group-open:bg-[#FF4C29]/10 group-open:border-[#FF4C29]/30 group-open:text-[#FF4C29] transition-all duration-200">
           <svg
-            className="w-3 h-3 transition-transform duration-200 group-open:rotate-45"
+            className="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-45"
             fill="none"
-            viewBox="0 0 12 12"
+            viewBox="0 0 14 14"
             stroke="currentColor"
             strokeWidth={2}
+            strokeLinecap="round"
           >
-            <path d="M6 2v8M2 6h8" />
+            <path d="M7 2v10M2 7h10" />
           </svg>
         </span>
       </summary>
-      <div className="px-6 pb-5 -mt-1">
-        <p className="text-sm text-gray-400 leading-relaxed pr-10">{a}</p>
+      <div className="px-7 pb-6 -mt-1">
+        <p className="text-sm text-gray-400 leading-relaxed max-w-2xl">{a}</p>
       </div>
     </details>
   );
