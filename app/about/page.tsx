@@ -1,5 +1,5 @@
 import { ArrowRight, Lightbulb, Users, Zap } from "lucide-react";
-import { APP_URL } from "@/lib/constants";
+
 
 export default function AboutPage() {
   return (
@@ -111,10 +111,10 @@ export default function AboutPage() {
             users could ship their own feature requests?
           </p>
           <a
-            href={`${APP_URL}/sign-up`}
+            href="/#waitlist"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
           >
-            Get started free
+            Join the Waitlist
             <ArrowRight size={16} />
           </a>
         </div>
