@@ -47,27 +47,195 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it works — animated flow */}
+      {/* How it works — vertical timeline */}
       <section id="how-it-works" className="py-24 bg-[#0D1117]">
         <div className="max-w-6xl mx-auto px-8 lg:px-12">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              From feedback to shipped in minutes
+          <div className="text-center mb-20">
+            <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
+              How it works
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+              Four steps. Zero engineering time.
             </h2>
-            <p className="text-gray-400">
-              No tickets. No sprint planning. No engineer assignments.
+            <p className="text-gray-400 max-w-lg mx-auto">
+              From a user&apos;s idea to a deployed feature — without touching
+              your sprint backlog.
             </p>
           </div>
-          <FlowDiagram />
 
-          <div className="text-center mt-14">
-            <a
-              href={`${APP_URL}/sign-up`}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
-            >
-              Try it yourself
-              <ArrowRight size={14} />
-            </a>
+          {/* Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical line */}
+            <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#FF4C29]/40 via-[#FF4C29]/20 to-transparent" />
+
+            {/* Step 1 */}
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16 mb-20">
+              {/* Dot */}
+              <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#FF4C29]/10 border-2 border-[#FF4C29]/40 flex items-center justify-center z-10">
+                <span className="text-sm font-bold text-[#FF4C29]">1</span>
+              </div>
+              {/* Left content */}
+              <div className="lg:w-1/2 lg:text-right lg:pr-16 pl-16 lg:pl-0">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <MessageSquareText size={16} className="text-[#FF4C29]" />
+                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">User Feedback</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  A user spots something they want
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  They click your embedded widget, type &quot;Add a dark mode
+                  toggle to settings,&quot; and hit submit. No account, no
+                  ticket system, 10 seconds flat.
+                </p>
+              </div>
+              {/* Right visual */}
+              <div className="lg:w-1/2 lg:pl-16 pl-16 lg:pl-16">
+                <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-4 max-w-xs">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-6 h-6 rounded bg-[#FF4C29]/20 flex items-center justify-center">
+                      <MessageSquareText size={12} className="text-[#FF4C29]" />
+                    </div>
+                    <span className="text-[11px] font-medium text-white">Feature Request</span>
+                  </div>
+                  <div className="rounded bg-[#141B2D] border border-gray-800/40 p-3 mb-2">
+                    <p className="text-xs text-gray-300">&quot;Add a dark mode toggle to the settings page&quot;</p>
+                  </div>
+                  <div className="flex justify-end">
+                    <span className="px-3 py-1 rounded bg-[#FF4C29] text-[10px] font-semibold text-white">Submit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-8 lg:gap-16 mb-20">
+              <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#FF4C29]/10 border-2 border-[#FF4C29]/40 flex items-center justify-center z-10">
+                <span className="text-sm font-bold text-[#FF4C29]">2</span>
+              </div>
+              <div className="lg:w-1/2 lg:text-left lg:pl-16 pl-16 lg:pl-16">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <Code2 size={16} className="text-[#FF4C29]" />
+                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">AI Spec</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  AI reads your code and writes a plan
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  ShipFeat clones your repo, understands the structure, and
+                  generates a detailed spec — which files to touch, what to
+                  change, what to add. You approve before any code is written.
+                </p>
+              </div>
+              <div className="lg:w-1/2 lg:pr-16 lg:text-right pl-16 lg:pl-0">
+                <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-4 max-w-xs lg:ml-auto font-mono">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] text-gray-500">Analyzing codebase…</span>
+                  </div>
+                  <div className="space-y-1.5 text-[11px] text-gray-400">
+                    <p><span className="text-emerald-400">✓</span> Scanned 24 files</p>
+                    <p><span className="text-emerald-400">✓</span> Found settings component</p>
+                    <p><span className="text-emerald-400">✓</span> Identified theme context</p>
+                    <p className="text-white">→ Spec: 3 files · 47 lines</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16 mb-20">
+              <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#FF4C29]/10 border-2 border-[#FF4C29]/40 flex items-center justify-center z-10">
+                <span className="text-sm font-bold text-[#FF4C29]">3</span>
+              </div>
+              <div className="lg:w-1/2 lg:text-right lg:pr-16 pl-16 lg:pl-0">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <GitPullRequest size={16} className="text-[#FF4C29]" />
+                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">Pull Request</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Code written, PR opened, preview live
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  The AI generates production-ready code, opens a pull request
+                  on your repo, and Vercel spins up a live preview. Review the
+                  diff and test it on a real URL.
+                </p>
+              </div>
+              <div className="lg:w-1/2 lg:pl-16 pl-16 lg:pl-16">
+                <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-4 max-w-xs">
+                  <div className="flex items-center gap-2 mb-3">
+                    <GitPullRequest size={14} className="text-emerald-400" />
+                    <span className="text-[11px] font-medium text-white">PR #142</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 ml-auto">Open</span>
+                  </div>
+                  <p className="text-[11px] text-gray-400 mb-2">feat: add dark mode toggle to settings</p>
+                  <div className="flex items-center gap-3 text-[10px]">
+                    <span className="text-emerald-400">+47 lines</span>
+                    <span className="text-red-400">-3 lines</span>
+                    <span className="text-gray-600">3 files</span>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-800/60">
+                    <div className="flex items-center gap-1.5 text-[10px] text-blue-400">
+                      <Globe size={10} />
+                      <span>preview-dark-mode-abc123.vercel.app</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative flex flex-col lg:flex-row-reverse items-start lg:items-center gap-8 lg:gap-16">
+              <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#FF4C29]/10 border-2 border-[#FF4C29]/40 flex items-center justify-center z-10">
+                <span className="text-sm font-bold text-[#FF4C29]">4</span>
+              </div>
+              <div className="lg:w-1/2 lg:text-left lg:pl-16 pl-16 lg:pl-16">
+                <div className="inline-flex items-center gap-2 mb-2">
+                  <CheckCircle2 size={16} className="text-[#FF4C29]" />
+                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">Shipped</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Merge and your user gets notified
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Click merge. The change goes live. ShipFeat sends your user an
+                  email: &quot;Your request was shipped.&quot; From feedback to
+                  deployed in minutes, not sprints.
+                </p>
+              </div>
+              <div className="lg:w-1/2 lg:pr-16 lg:text-right pl-16 lg:pl-0">
+                <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.03] p-4 max-w-xs lg:ml-auto">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle2 size={14} className="text-emerald-400" />
+                    <span className="text-[11px] font-medium text-emerald-400">Shipped!</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <span className="text-[8px] text-purple-400">PR</span>
+                      </div>
+                      <span className="text-[11px] text-gray-400">Merged to main</span>
+                      <CheckCircle2 size={10} className="text-emerald-400 ml-auto" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center">
+                        <span className="text-[8px] text-blue-400">🚀</span>
+                      </div>
+                      <span className="text-[11px] text-gray-400">Deployed to production</span>
+                      <CheckCircle2 size={10} className="text-emerald-400 ml-auto" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center">
+                        <span className="text-[8px] text-amber-400">✉</span>
+                      </div>
+                      <span className="text-[11px] text-gray-400">User notified via email</span>
+                      <CheckCircle2 size={10} className="text-emerald-400 ml-auto" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
