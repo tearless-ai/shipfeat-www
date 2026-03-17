@@ -17,7 +17,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="pt-28 pb-24">
-        <div className="max-w-4xl mx-auto px-8 lg:px-12 text-center space-y-6">
+        <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
             Turn feature requests into
             <br />
@@ -49,7 +49,7 @@ export default function Home() {
 
       {/* How it works — vertical timeline */}
       <section id="how-it-works" className="py-24 bg-[#0D1117]">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-20">
             <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
               How it works
@@ -242,7 +242,7 @@ export default function Home() {
 
       {/* Feature 1 — Widget */}
       <section className="py-24">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
@@ -297,7 +297,7 @@ export default function Home() {
 
       {/* Feature 2 — Approval gates */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual — approval flow */}
             <div className="order-2 lg:order-1 rounded-xl border border-gray-800/60 bg-[#0B0F19] p-6">
@@ -368,7 +368,7 @@ export default function Home() {
 
       {/* Feature 3 — BYOK */}
       <section className="py-24">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
@@ -430,7 +430,7 @@ export default function Home() {
 
       {/* Feature 4 — Live preview */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual — browser preview mockup */}
             <div className="order-2 lg:order-1 rounded-xl border border-gray-800/60 bg-[#0B0F19] overflow-hidden">
@@ -506,7 +506,7 @@ export default function Home() {
           <div className="w-[800px] h-[400px] rounded-full bg-[#FF4C29]/[0.07] blur-[120px]" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-8 lg:px-12 text-center relative z-10">
+        <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center relative z-10">
           <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-6">
             Get Early Access
           </p>

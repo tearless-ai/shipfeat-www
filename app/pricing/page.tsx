@@ -17,7 +17,7 @@ export default function PricingPage() {
     <>
       {/* Hero */}
       <section className="pt-28 pb-4">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12 text-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
           <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
             Pricing
           </p>
@@ -33,7 +33,7 @@ export default function PricingPage() {
 
       {/* Pricing card */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-8 lg:px-12">
+        <div className="max-w-6xl mx-auto px-8 lg:px-12">
           <div className="relative rounded-2xl border border-[#FF4C29]/20 bg-gradient-to-b from-[#FF4C29]/[0.04] to-transparent overflow-hidden">
             {/* Glow */}
             <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#FF4C29]/[0.06] blur-[100px] pointer-events-none" />
@@ -117,7 +117,7 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-5xl mx-auto px-8 lg:px-12">
+        <div className="max-w-6xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-16">
             <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
               FAQ

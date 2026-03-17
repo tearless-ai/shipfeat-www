@@ -3,7 +3,7 @@ import { Rocket } from "lucide-react";
 export function Footer() {
   return (
     <footer className="border-t border-gray-800/30">
-      <div className="max-w-6xl mx-auto px-8 lg:px-12 py-10">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 py-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <a
             href="/"
