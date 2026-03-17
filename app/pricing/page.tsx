@@ -8,7 +8,7 @@ import {
   Palette,
   Mail,
   Shield,
-  HelpCircle,
+
 } from "lucide-react";
 import { APP_URL } from "@/lib/constants";
 
@@ -117,41 +117,43 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-2xl mx-auto px-8 lg:px-12">
-          <div className="flex items-center justify-center gap-2 mb-10">
-            <HelpCircle size={18} className="text-gray-600" />
-            <h2 className="text-2xl font-bold text-white">
-              Questions
+        <div className="max-w-3xl mx-auto px-8 lg:px-12">
+          <div className="text-center mb-14">
+            <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
+              FAQ
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              Got questions?
             </h2>
           </div>
-          <div className="space-y-8">
-            <FAQ
+          <div className="divide-y divide-gray-800/60 rounded-xl border border-gray-800/60 bg-[#0B0F19] overflow-hidden">
+            <FAQItem
               q="What counts as a feature?"
               a="A feature is counted when you generate a spec from a user's request. Widget submissions are free and unlimited — you only pay when you ask the AI to plan and build."
             />
-            <FAQ
+            <FAQItem
               q="Do I need to provide my own AI API key?"
               a="Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring your own key, choose your model, and control costs directly. We encrypt your key at rest and never proxy through our servers."
             />
-            <FAQ
+            <FAQItem
               q="What happens if I hit 25 features?"
               a="You keep going. Each additional feature is $3. No service interruption, no upgrade required. Your next invoice just reflects the overage."
             />
-            <FAQ
+            <FAQItem
               q="What if the AI writes bad code?"
               a="Nothing ships without your approval. You review the spec before code is written, and review the PR with a live preview before merging. Two gates, full control."
             />
-            <FAQ
+            <FAQItem
               q="Can I cancel anytime?"
               a="Yes. Cancel from your dashboard before the trial ends and you won't be charged. After that, cancel anytime — no contracts, no commitments."
             />
-            <FAQ
+            <FAQItem
               q="What frameworks are supported?"
               a="ShipFeat works best with modern JavaScript/TypeScript codebases — Next.js, React, Vue, and similar. The AI reads your code structure and generates changes that match your patterns."
             />
-            <FAQ
+            <FAQItem
               q="Need custom terms for a larger team?"
-              a="Email us at dinesh@tearless.ai. We're happy to work out volume pricing, SSO, or anything else you need."
+              a={<>Email us at <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline">dinesh@tearless.ai</a>. We&apos;re happy to work out volume pricing, SSO, or anything else you need.</>}
             />
           </div>
         </div>
@@ -182,11 +184,26 @@ function Feature({
   );
 }
 
-function FAQ({ q, a }: { q: string; a: string }) {
+function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
   return (
-    <div>
-      <h3 className="text-sm font-semibold text-white mb-1.5">{q}</h3>
-      <p className="text-sm text-gray-400 leading-relaxed">{a}</p>
-    </div>
+    <details className="group">
+      <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-[#141B2D]/50 transition-colors">
+        <span className="text-sm font-medium text-white">{q}</span>
+        <span className="shrink-0 w-5 h-5 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 group-open:border-[#FF4C29]/40 group-open:text-[#FF4C29] transition-colors">
+          <svg
+            className="w-3 h-3 transition-transform duration-200 group-open:rotate-45"
+            fill="none"
+            viewBox="0 0 12 12"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path d="M6 2v8M2 6h8" />
+          </svg>
+        </span>
+      </summary>
+      <div className="px-6 pb-5 -mt-1">
+        <p className="text-sm text-gray-400 leading-relaxed pr-10">{a}</p>
+      </div>
+    </details>
   );
 }
