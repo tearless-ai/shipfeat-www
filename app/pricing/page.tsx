@@ -10,7 +10,7 @@ import {
   Shield,
 
 } from "lucide-react";
-import { APP_URL } from "@/lib/constants";
+
 
 export default function PricingPage() {
   return (
@@ -56,14 +56,14 @@ export default function PricingPage() {
                 </div>
                 <div className="flex flex-col items-start md:items-end gap-3">
                   <a
-                    href={`${APP_URL}/sign-up`}
+                    href="/#waitlist"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
                   >
-                    Start 7-day free trial
+                    Join the Waitlist
                     <ArrowRight size={18} />
                   </a>
                   <span className="text-xs text-gray-500">
-                    Credit card required · Cancel anytime
+                    Free while in beta · No credit card needed
                   </span>
                 </div>
               </div>
