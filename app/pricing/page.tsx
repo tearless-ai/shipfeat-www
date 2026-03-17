@@ -2,149 +2,115 @@ import {
   ArrowRight,
   Check,
   Zap,
-  Building2,
-  Crown,
+  Infinity,
+  Users,
+  Github,
+  Palette,
+  Mail,
+  Shield,
+  HelpCircle,
 } from "lucide-react";
 import { APP_URL } from "@/lib/constants";
-
-function PricingCard({
-  name,
-  price,
-  period,
-  description,
-  features,
-  cta,
-  href,
-  highlighted,
-  icon: Icon,
-}: {
-  name: string;
-  price: string;
-  period?: string;
-  description: string;
-  features: string[];
-  cta: string;
-  href: string;
-  highlighted?: boolean;
-  icon: React.ElementType;
-}) {
-  return (
-    <div
-      className={`rounded-xl border p-8 flex flex-col ${
-        highlighted
-          ? "border-[#FF4C29]/50 bg-[#FF4C29]/5 ring-1 ring-[#FF4C29]/20"
-          : "border-gray-800/60 bg-[#141B2D]"
-      }`}
-    >
-      <div className="flex items-center gap-2 mb-4">
-        <div
-          className={`p-2 rounded-lg ${
-            highlighted ? "bg-[#FF4C29]/10" : "bg-gray-800"
-          }`}
-        >
-          <Icon
-            size={18}
-            className={highlighted ? "text-[#FF4C29]" : "text-gray-400"}
-          />
-        </div>
-        <h3 className="text-lg font-bold text-white">{name}</h3>
-      </div>
-      <div className="mb-4">
-        <span className="text-4xl font-bold text-white">{price}</span>
-        {period && <span className="text-gray-400 ml-1">{period}</span>}
-      </div>
-      <p className="text-sm text-gray-400 mb-6">{description}</p>
-      <ul className="space-y-3 mb-8 flex-1">
-        {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
-            <Check size={16} className="text-emerald-400 shrink-0 mt-0.5" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href={href}
-        className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors ${
-          highlighted
-            ? "bg-[#FF4C29] hover:bg-[#E5421F] text-white shadow-lg shadow-[#FF4C29]/20"
-            : "bg-gray-800 hover:bg-gray-700 text-white"
-        }`}
-      >
-        {cta}
-        <ArrowRight size={14} />
-      </a>
-    </div>
-  );
-}
 
 export default function PricingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-24">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Simple, transparent pricing
-            </h1>
-            <p className="text-lg text-gray-400 max-w-lg mx-auto">
-              Start free. Scale when you need to. No surprise bills.
-            </p>
+      <section className="pt-28 pb-4">
+        <div className="max-w-6xl mx-auto px-8 lg:px-12 text-center">
+          <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
+            Pricing
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
+            One plan. Everything included.
+          </h1>
+          <p className="text-lg text-gray-400 max-w-xl mx-auto">
+            No tiers to compare. No features locked behind upgrades.
+            Just start building.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing card */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-8 lg:px-12">
+          <div className="relative rounded-2xl border border-[#FF4C29]/20 bg-gradient-to-b from-[#FF4C29]/[0.04] to-transparent overflow-hidden">
+            {/* Glow */}
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#FF4C29]/[0.06] blur-[100px] pointer-events-none" />
+
+            <div className="relative z-10 p-10 md:p-14">
+              {/* Header row */}
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4C29]/10 border border-[#FF4C29]/20 mb-5">
+                    <Zap size={12} className="text-[#FF4C29]" />
+                    <span className="text-xs font-semibold text-[#FF4C29]">Pro</span>
+                  </div>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-6xl font-bold text-white tracking-tight">$49</span>
+                    <span className="text-lg text-gray-500">/month</span>
+                  </div>
+                  <p className="text-gray-400">
+                    25 features included · <span className="text-gray-300">$3 per additional</span>
+                  </p>
+                </div>
+                <div className="flex flex-col items-start md:items-end gap-3">
+                  <a
+                    href={`${APP_URL}/sign-up`}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
+                  >
+                    Start 7-day free trial
+                    <ArrowRight size={18} />
+                  </a>
+                  <span className="text-xs text-gray-500">
+                    Credit card required · Cancel anytime
+                  </span>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent mb-12" />
+
+              {/* Features grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6">
+                <Feature icon={Zap} text="25 features / month" highlight />
+                <Feature icon={Infinity} text="Unlimited projects" />
+                <Feature icon={Users} text="Unlimited team members" />
+                <Feature icon={Github} text="GitHub App integration" />
+                <Feature icon={Palette} text="Widget customization" />
+                <Feature icon={Mail} text="Email notifications" />
+                <Feature icon={Shield} text="API key encryption" />
+                <Feature icon={Check} text="Live Vercel previews" />
+                <Feature icon={Check} text="Build logs & history" />
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <PricingCard
-              icon={Zap}
-              name="Beta"
-              price="Free"
-              description="Everything you need to try ShipFeat. No credit card required."
-              features={[
-                "10 enhancement requests / month",
-                "1 project",
-                "Bring your own AI key",
-                "GitHub App integration",
-                "Widget + allowed domains",
-                "Email support",
-              ]}
-              cta="Start free"
-              href={`${APP_URL}/sign-up`}
-            />
-            <PricingCard
-              icon={Building2}
-              name="Team"
-              price="$49"
-              period="/mo"
-              description="For growing teams shipping enhancements at scale."
-              features={[
-                "Unlimited enhancement requests",
-                "Unlimited projects",
-                "Bring your own AI key",
-                "Priority builds",
-                "Widget customization",
-                "Team members & roles",
-                "Priority support",
-              ]}
-              cta="Start free trial"
-              href={`${APP_URL}/sign-up`}
-              highlighted
-            />
-            <PricingCard
-              icon={Crown}
-              name="Enterprise"
-              price="Custom"
-              description="For larger teams with compliance and security needs."
-              features={[
-                "Everything in Team",
-                "SSO / SAML",
-                "Audit logs",
-                "Custom AI model routing",
-                "Dedicated infrastructure",
-                "SLA guarantee",
-                "Onboarding & training",
-              ]}
-              cta="Contact us"
-              href="mailto:dinesh@tearless.ai?subject=ShipFeat Enterprise"
-            />
+          {/* Below the card — how the trial works */}
+          <div className="mt-16 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="w-10 h-10 rounded-full bg-[#141B2D] border border-gray-800/60 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-sm font-bold text-[#FF4C29]">1</span>
+                </div>
+                <p className="text-sm font-semibold text-white mb-1">Sign up</p>
+                <p className="text-xs text-gray-500">Add your AI key and connect GitHub. Takes 5 minutes.</p>
+              </div>
+              <div>
+                <div className="w-10 h-10 rounded-full bg-[#141B2D] border border-gray-800/60 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-sm font-bold text-[#FF4C29]">2</span>
+                </div>
+                <p className="text-sm font-semibold text-white mb-1">Build for 7 days free</p>
+                <p className="text-xs text-gray-500">10 features included in your trial. Full access to everything.</p>
+              </div>
+              <div>
+                <div className="w-10 h-10 rounded-full bg-[#141B2D] border border-gray-800/60 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-sm font-bold text-[#FF4C29]">3</span>
+                </div>
+                <p className="text-sm font-semibold text-white mb-1">Auto-converts to Pro</p>
+                <p className="text-xs text-gray-500">$49/mo after trial. Cancel before day 7 and pay nothing.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,52 +118,75 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
         <div className="max-w-2xl mx-auto px-8 lg:px-12">
-          <h2 className="text-2xl font-bold text-white text-center mb-10">
-            Frequently asked
-          </h2>
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <HelpCircle size={18} className="text-gray-600" />
+            <h2 className="text-2xl font-bold text-white">
+              Questions
+            </h2>
+          </div>
           <div className="space-y-8">
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1.5">
-                Do I need to provide my own AI API key?
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring
-                your own key and choose your model. This means you control costs
-                and quality.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1.5">
-                What happens if the AI writes bad code?
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Nothing ships without your approval. You review the spec before
-                code is written, and review the PR (with a live preview) before
-                merging. Two gates, full control.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1.5">
-                What frameworks are supported?
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                ShipFeat works best with modern JavaScript/TypeScript codebases
-                — Next.js, React, Vue, and similar. The AI reads your code
-                structure to generate changes.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1.5">
-                Can I cancel anytime?
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Yes. No contracts, no commitments. Cancel from your dashboard
-                and you won&apos;t be charged again.
-              </p>
-            </div>
+            <FAQ
+              q="What counts as a feature?"
+              a="A feature is counted when you generate a spec from a user's request. Widget submissions are free and unlimited — you only pay when you ask the AI to plan and build."
+            />
+            <FAQ
+              q="Do I need to provide my own AI API key?"
+              a="Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring your own key, choose your model, and control costs directly. We encrypt your key at rest and never proxy through our servers."
+            />
+            <FAQ
+              q="What happens if I hit 25 features?"
+              a="You keep going. Each additional feature is $3. No service interruption, no upgrade required. Your next invoice just reflects the overage."
+            />
+            <FAQ
+              q="What if the AI writes bad code?"
+              a="Nothing ships without your approval. You review the spec before code is written, and review the PR with a live preview before merging. Two gates, full control."
+            />
+            <FAQ
+              q="Can I cancel anytime?"
+              a="Yes. Cancel from your dashboard before the trial ends and you won't be charged. After that, cancel anytime — no contracts, no commitments."
+            />
+            <FAQ
+              q="What frameworks are supported?"
+              a="ShipFeat works best with modern JavaScript/TypeScript codebases — Next.js, React, Vue, and similar. The AI reads your code structure and generates changes that match your patterns."
+            />
+            <FAQ
+              q="Need custom terms for a larger team?"
+              a="Email us at dinesh@tearless.ai. We're happy to work out volume pricing, SSO, or anything else you need."
+            />
           </div>
         </div>
       </section>
     </>
+  );
+}
+
+function Feature({
+  icon: Icon,
+  text,
+  highlight,
+}: {
+  icon: React.ElementType;
+  text: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <Icon
+        size={16}
+        className={highlight ? "text-[#FF4C29] shrink-0" : "text-emerald-400 shrink-0"}
+      />
+      <span className={`text-sm ${highlight ? "text-white font-medium" : "text-gray-300"}`}>
+        {text}
+      </span>
+    </div>
+  );
+}
+
+function FAQ({ q, a }: { q: string; a: string }) {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold text-white mb-1.5">{q}</h3>
+      <p className="text-sm text-gray-400 leading-relaxed">{a}</p>
+    </div>
   );
 }
