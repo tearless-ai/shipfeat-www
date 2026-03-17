@@ -117,7 +117,7 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-3xl mx-auto px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-16">
             <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
               FAQ
@@ -126,34 +126,38 @@ export default function PricingPage() {
               Got questions?
             </h2>
           </div>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <FAQItem
               q="What counts as a feature?"
-              a="A feature is counted when you generate a spec from a user's request. Widget submissions are free and unlimited — you only pay when you ask the AI to plan and build."
+              a="Counted when you generate a spec. Widget submissions are free and unlimited — you only pay when the AI plans and builds."
             />
             <FAQItem
-              q="Do I need to provide my own AI API key?"
-              a="Yes. ShipFeat works with Anthropic Claude and OpenAI. You bring your own key, choose your model, and control costs directly. We encrypt your key at rest and never proxy through our servers."
+              q="Do I need my own AI API key?"
+              a="Yes. Works with Anthropic Claude and OpenAI. You bring your key, choose your model, control costs. We encrypt at rest."
             />
             <FAQItem
-              q="What happens if I hit 25 features?"
-              a="You keep going. Each additional feature is $3. No service interruption, no upgrade required. Your next invoice just reflects the overage."
+              q="What if I hit 25 features?"
+              a="Keep going. Each additional feature is $3. No interruption, no upgrade. Your next invoice reflects the overage."
             />
             <FAQItem
               q="What if the AI writes bad code?"
-              a="Nothing ships without your approval. You review the spec before code is written, and review the PR with a live preview before merging. Two gates, full control."
+              a="Nothing ships without approval. Review the spec first, then the PR with a live preview. Two gates, full control."
             />
             <FAQItem
               q="Can I cancel anytime?"
-              a="Yes. Cancel from your dashboard before the trial ends and you won't be charged. After that, cancel anytime — no contracts, no commitments."
+              a="Yes. Cancel before the trial ends and pay nothing. After that, cancel anytime — no contracts, no commitments."
             />
             <FAQItem
-              q="What frameworks are supported?"
-              a="ShipFeat works best with modern JavaScript/TypeScript codebases — Next.js, React, Vue, and similar. The AI reads your code structure and generates changes that match your patterns."
+              q="What frameworks work?"
+              a="Modern JS/TS codebases — Next.js, React, Vue, and similar. The AI reads your code structure and matches your patterns."
             />
             <FAQItem
-              q="Need custom terms for a larger team?"
-              a={<>Email us at <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline">dinesh@tearless.ai</a>. We&apos;re happy to work out volume pricing, SSO, or anything else you need.</>}
+              q="Need custom terms?"
+              a={<>Email <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline">dinesh@tearless.ai</a> for volume pricing, SSO, or anything custom.</>}
+            />
+            <FAQItem
+              q="How long is the free trial?"
+              a="7 days with 10 features included. Full access to everything. Auto-converts to Pro unless you cancel."
             />
           </div>
         </div>
