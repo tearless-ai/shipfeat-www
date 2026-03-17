@@ -53,17 +53,20 @@ export default function PricingPage() {
                   <p className="text-gray-400">
                     25 features included · <span className="text-gray-300">$3 per additional</span>
                   </p>
+                  <p className="text-sm text-[#FF4C29]/70 mt-1">
+                    Try free for 7 days — 3 features, full access
+                  </p>
                 </div>
                 <div className="flex flex-col items-start md:items-end gap-3">
                   <a
                     href="/#waitlist"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
                   >
-                    Join the Waitlist
+                    Start Free Trial
                     <ArrowRight size={18} />
                   </a>
                   <span className="text-xs text-gray-500">
-                    Free while in beta · No credit card needed
+                    3 features included · 7 days · No credit card needed
                   </span>
                 </div>
               </div>
