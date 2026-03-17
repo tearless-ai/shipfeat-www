@@ -101,7 +101,7 @@ export default function PricingPage() {
                   <span className="text-sm font-bold text-[#FF4C29]">2</span>
                 </div>
                 <p className="text-sm font-semibold text-white mb-1">Build for 7 days free</p>
-                <p className="text-xs text-gray-500">10 features included in your trial. Full access to everything.</p>
+                <p className="text-xs text-gray-500">3 features included in your trial. Full access to everything.</p>
               </div>
               <div>
                 <div className="w-10 h-10 rounded-full bg-[#141B2D] border border-gray-800/60 flex items-center justify-center mx-auto mb-3">
@@ -157,7 +157,7 @@ export default function PricingPage() {
             />
             <FAQItem
               q="How long is the free trial?"
-              a="7 days with 10 features included. Full access to everything. Auto-converts to Pro unless you cancel."
+              a="7 days with 3 features included. Full access to everything. Auto-converts to Pro unless you cancel."
             />
           </div>
         </div>

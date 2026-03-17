@@ -18,7 +18,7 @@ export default function FulfillmentPage() {
 
           <div>
             <h2 className="text-base font-semibold text-white mb-2">Free Trial</h2>
-            <p>New users may start with a 7-day free trial that includes 10 features. A valid payment method is required. If not cancelled before the trial ends, the subscription automatically converts to the paid Pro plan at $49/month.</p>
+            <p>New users may start with a 7-day free trial that includes 3 features. A valid payment method is required. If not cancelled before the trial ends, the subscription automatically converts to the paid Pro plan at $49/month.</p>
           </div>
 
           <div>
