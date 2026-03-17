@@ -39,7 +39,7 @@ export default function Home() {
             </a>
             <a
               href="#how-it-works"
-              className="px-7 py-3.5 text-gray-400 hover:text-white text-sm font-medium transition-colors"
+              className="px-7 py-3.5 text-gray-300 hover:text-white text-sm font-medium transition-colors border border-[#FF4C29]/30 hover:border-[#FF4C29]/60 rounded-lg"
             >
               See how it works
             </a>
