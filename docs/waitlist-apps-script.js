@@ -20,7 +20,8 @@ function doOptions(e) {
 /** Handle POST submissions */
 function doPost(e) {
   try {
-    var body = JSON.parse(e.postData.contents);
+    var raw = e.postData.contents;
+    var body = JSON.parse(raw);
 
     // Honeypot — bots fill this, humans leave it empty
     if (body.honeypot) {

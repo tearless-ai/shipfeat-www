@@ -20,18 +20,16 @@ export function WaitlistForm() {
     try {
       const res = await fetch(WAITLIST_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ email, firstName, honeypot }),
+        redirect: "follow",
       });
 
-      const data = await res.json();
-
-      if (data.success) {
-        setState("success");
-      } else {
-        setState("error");
-        setErrorMsg(data.error || "Something went wrong. Please try again.");
-      }
+      // Google Apps Script with no-cors returns opaque response (status 0)
+      // but the request still goes through. We optimistically show success.
+      // The Apps Script handles validation server-side.
+      setState("success");
     } catch {
       setState("error");
       setErrorMsg("Network error. Please try again.");
