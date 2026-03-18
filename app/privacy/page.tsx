@@ -3,7 +3,7 @@ import { Shield } from "lucide-react";
 export default function PrivacyPage() {
   return (
     <section className="py-24">
-      <div className="max-w-3xl mx-auto px-8 lg:px-12">
+      <div className="max-w-4xl mx-auto px-8 lg:px-12">
         {/* Header */}
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF4C29]/10 border border-[#FF4C29]/20 mb-6">
