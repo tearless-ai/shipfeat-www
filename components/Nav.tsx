@@ -23,10 +23,10 @@ export function Nav() {
         </nav>
         <div className="flex items-center gap-3">
           <a
-            href="/#waitlist"
+            href="https://app.shipfeat.ai/sign-up"
             className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
           >
-            Join Waitlist
+            Start Free Trial
           </a>
         </div>
       </div>

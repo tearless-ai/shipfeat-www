@@ -251,10 +251,10 @@ export default function AboutPage() {
             ShipFeat is that tool.
           </p>
           <a
-            href="/#waitlist"
+            href="https://app.shipfeat.ai/sign-up"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
           >
-            Join the Waitlist
+            Start Free Trial
             <ArrowRight size={18} />
           </a>
         </div>
