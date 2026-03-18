@@ -12,6 +12,7 @@ import {
   History,
   Building2,
 } from "lucide-react";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 // ──────────────────────────────────────────────
 // Tier data
@@ -193,13 +194,10 @@ export default function PricingPage() {
                 <p className="text-sm text-gray-400">For solo builders shipping fast.</p>
               </div>
 
-              <a
-                href="https://app.shipfeat.ai/sign-up"
+              <EarlyAccessButton
                 className="flex items-center justify-center gap-2 px-5 py-3 bg-transparent hover:bg-[#1E293B] text-gray-300 hover:text-white text-sm font-semibold rounded-lg border border-gray-700 hover:border-gray-600 transition-colors mb-8"
-              >
-                Start Free Trial
-                <ArrowRight size={15} />
-              </a>
+                arrowSize={15}
+              />
 
               <div className="space-y-3 flex-1">
                 <FeatureRow icon={Zap} text="10 features / month" />
@@ -237,13 +235,10 @@ export default function PricingPage() {
                 <p className="text-sm text-gray-400">For growing teams shipping more.</p>
               </div>
 
-              <a
-                href="https://app.shipfeat.ai/sign-up"
+              <EarlyAccessButton
                 className="relative z-10 flex items-center justify-center gap-2 px-5 py-3 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 mb-8"
-              >
-                Start Free Trial
-                <ArrowRight size={15} />
-              </a>
+                arrowSize={15}
+              />
 
               <div className="space-y-3 flex-1 relative z-10">
                 <FeatureRow icon={Zap} text="50 features / month" highlight />

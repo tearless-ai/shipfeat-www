@@ -1,4 +1,5 @@
 import { Rocket } from "lucide-react";
+import { EarlyAccessButton } from "./EarlyAccessButton";
 
 export function Nav() {
   return (
@@ -22,12 +23,10 @@ export function Nav() {
           </a>
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href="https://app.shipfeat.ai/sign-up"
-            className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors"
-          >
-            Start Free Trial
-          </a>
+          <EarlyAccessButton
+            className="px-4 py-2 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors inline-flex items-center gap-2"
+            showArrow={false}
+          />
         </div>
       </div>
     </header>

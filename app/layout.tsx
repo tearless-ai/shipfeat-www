@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { EarlyAccessProvider } from "@/components/EarlyAccessContext";
+import { EarlyAccessModal } from "@/components/EarlyAccessModal";
 
 export const metadata: Metadata = {
   title: "ShipFeat — Your users ask. AI ships.",
@@ -35,11 +37,14 @@ export default function RootLayout({
         className="bg-[#0B0F19] text-gray-100 antialiased"
         suppressHydrationWarning
       >
-        <div className="min-h-screen flex flex-col">
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <EarlyAccessProvider>
+          <div className="min-h-screen flex flex-col">
+            <Nav />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <EarlyAccessModal />
+        </EarlyAccessProvider>
       </body>
     </html>
   );

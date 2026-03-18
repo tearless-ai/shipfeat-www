@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   MessageSquareText,
   Shield,
   Key,
@@ -10,6 +9,7 @@ import {
   Globe,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 export default function Home() {
   return (
@@ -29,13 +29,10 @@ export default function Home() {
             review and merge.
           </p>
           <div className="flex items-center justify-center gap-4 pt-4">
-            <a
-              href="https://app.shipfeat.ai/sign-up"
+            <EarlyAccessButton
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-[#FF4C29]/20"
-            >
-              Start Free Trial
-              <ArrowRight size={16} />
-            </a>
+              arrowSize={16}
+            />
             <a
               href="#how-it-works"
               className="px-7 py-3.5 text-gray-300 hover:text-white text-sm font-medium transition-colors border border-[#FF4C29]/30 hover:border-[#FF4C29]/60 rounded-lg"
@@ -520,13 +517,10 @@ export default function Home() {
           <p className="text-sm text-gray-500 mb-10">
             7-day free trial · Full Pro features · 5 builds included
           </p>
-          <a
-            href="https://app.shipfeat.ai/sign-up"
+          <EarlyAccessButton
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
-          >
-            Start Free Trial
-            <ArrowRight size={18} />
-          </a>
+            arrowSize={18}
+          />
         </div>
       </section>
     </>

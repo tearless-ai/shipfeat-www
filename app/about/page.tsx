@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   Lightbulb,
   Users,
   Zap,
@@ -7,6 +6,7 @@ import {
   Code2,
   GitPullRequest,
 } from "lucide-react";
+import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
 export default function AboutPage() {
   return (
@@ -250,13 +250,10 @@ export default function AboutPage() {
             feedback into deployed features without burning engineering hours.
             ShipFeat is that tool.
           </p>
-          <a
-            href="https://app.shipfeat.ai/sign-up"
+          <EarlyAccessButton
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
-          >
-            Start Free Trial
-            <ArrowRight size={18} />
-          </a>
+            arrowSize={18}
+          />
         </div>
       </section>
     </>
