@@ -35,10 +35,12 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
+    const formData = new URLSearchParams();
+    formData.append("secret", turnstileSecret);
+    formData.append("response", turnstileToken);
     const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ secret: turnstileSecret, response: turnstileToken }),
+      body: formData,
     });
     const verify = await verifyRes.json();
     if (!verify.success) {
