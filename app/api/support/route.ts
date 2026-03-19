@@ -43,9 +43,10 @@ export async function POST(request: NextRequest) {
       body: formData,
     });
     const verify = await verifyRes.json();
+    console.log("[support] Turnstile verify response:", JSON.stringify(verify));
     if (!verify.success) {
       return NextResponse.json(
-        { error: "Verification failed. Please try again." },
+        { error: "Verification failed. Please try again.", details: verify },
         { status: 403 },
       );
     }
