@@ -19,6 +19,9 @@ export function Footer() {
             <a href="/about" className="hover:text-gray-400 transition-colors">
               About
             </a>
+            <a href="/support" className="hover:text-gray-400 transition-colors">
+              Support
+            </a>
             <span className="hidden md:inline text-gray-800">·</span>
             <a href="/terms" className="hover:text-gray-400 transition-colors">
               Terms of Service
@@ -30,7 +33,7 @@ export function Footer() {
               Fulfillment Policy
             </a>
             <span className="hidden md:inline text-gray-800">·</span>
-            <span>© 2026 Tearless AI</span>
+            <span>© 2026 Tearless AI. All rights reserved.</span>
           </div>
         </div>
       </div>
