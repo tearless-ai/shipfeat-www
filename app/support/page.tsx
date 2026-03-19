@@ -1,8 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Send, CheckCircle2, Loader2, Mail } from "lucide-react";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAACs7ysz5rCMzuSbb";
 
 export default function SupportPage() {
   const [name, setName] = useState("");
@@ -11,8 +22,28 @@ export default function SupportPage() {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (document.querySelector('script[src*="turnstile"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    script.onload = () => {
+      if (turnstileRef.current && window.turnstile) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token: string) => setTurnstileToken(token),
+          "expired-callback": () => setTurnstileToken(""),
+          theme: "dark",
+        });
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +55,7 @@ export default function SupportPage() {
       const res = await fetch("/api/support", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, subject, message, turnstileToken }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => null);
@@ -142,9 +173,11 @@ export default function SupportPage() {
                 />
               </div>
 
+              <div ref={turnstileRef} className="mb-4" />
+
               <button
                 type="submit"
-                disabled={sending || !email || !message}
+                disabled={sending || !email || !message || !turnstileToken}
                 className="w-full px-5 py-3 rounded-lg bg-[#FF4C29] hover:bg-[#E5421F] text-white text-sm font-semibold transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {sending ? (

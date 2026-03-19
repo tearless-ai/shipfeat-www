@@ -10,20 +10,43 @@ function getResend() {
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
-  let body: { name?: string; email?: string; subject?: string; message?: string };
+  let body: { name?: string; email?: string; subject?: string; message?: string; turnstileToken?: string };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { name, email, subject, message } = body;
+  const { name, email, subject, message, turnstileToken } = body;
 
   if (!email || !message) {
     return NextResponse.json(
       { error: "Email and message are required" },
       { status: 400 },
     );
+  }
+
+  // Verify Turnstile token
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: "Please complete the verification" },
+        { status: 400 },
+      );
+    }
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ secret: turnstileSecret, response: turnstileToken }),
+    });
+    const verify = await verifyRes.json();
+    if (!verify.success) {
+      return NextResponse.json(
+        { error: "Verification failed. Please try again." },
+        { status: 403 },
+      );
+    }
   }
 
   try {
