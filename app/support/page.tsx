@@ -12,23 +12,27 @@ export default function SupportPage() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !message) return;
 
     setSending(true);
+    setError("");
     try {
-      // For now, open mailto link — replace with API endpoint when ready
-      const mailtoSubject = encodeURIComponent(
-        subject || "Support Request"
-      );
-      const mailtoBody = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\n${message}`
-      );
-      window.location.href = `mailto:support@shipfeat.ai?subject=${mailtoSubject}&body=${mailtoBody}`;
+      const res = await fetch("/api/support", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Failed to send");
+      }
       setSent(true);
-    } catch {
-      // fallback
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setSending(false);
     }
@@ -63,17 +67,11 @@ export default function SupportPage() {
                 className="text-emerald-400 mx-auto mb-4"
               />
               <h2 className="text-xl font-semibold text-white mb-2">
-                Message ready to send
+                Message sent!
               </h2>
               <p className="text-sm text-gray-400 mb-6">
-                Your email client should have opened with the message
-                pre-filled. If it didn&apos;t, email us directly at{" "}
-                <a
-                  href="mailto:support@shipfeat.ai"
-                  className="text-[#FF4C29] hover:underline"
-                >
-                  support@shipfeat.ai
-                </a>
+                We&apos;ve received your message and sent a confirmation to your
+                email. We&apos;ll get back to you as soon as possible.
               </p>
               <button
                 onClick={() => {
@@ -156,6 +154,10 @@ export default function SupportPage() {
                 )}
                 {sending ? "Sending…" : "Send Message"}
               </button>
+
+              {error && (
+                <p className="text-sm text-red-400 text-center mt-3">{error}</p>
+              )}
             </form>
           )}
 
