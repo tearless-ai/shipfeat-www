@@ -269,7 +269,7 @@ export default function PricingPage() {
               </div>
 
               <a
-                href="mailto:dinesh@tearless.ai"
+                href="mailto:support@shipfeat.ai"
                 className="flex items-center justify-center gap-2 px-5 py-3 bg-transparent hover:bg-[#1E293B] text-gray-300 hover:text-white text-sm font-semibold rounded-lg border border-gray-700 hover:border-gray-600 transition-colors mb-8"
               >
                 Contact Us
@@ -409,8 +409,8 @@ export default function PricingPage() {
               a={
                 <>
                   Email{" "}
-                  <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline">
-                    dinesh@tearless.ai
+                  <a href="mailto:support@shipfeat.ai" className="text-[#FF4C29] hover:underline">
+                    support@shipfeat.ai
                   </a>{" "}
                   for volume pricing, SSO, or anything custom.
                 </>

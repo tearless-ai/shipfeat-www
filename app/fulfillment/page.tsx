@@ -79,14 +79,14 @@ export default function FulfillmentPage() {
             <div className="rounded-xl border border-amber-900/40 bg-amber-950/20 p-6">
               <h2 className="text-lg font-semibold text-white mb-3">Refunds</h2>
               <p className="text-[15px] text-gray-400 leading-relaxed">
-                All payments are non-refundable. If you have any issues, please reach out to <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline font-medium">dinesh@tearless.ai</a>.
+                All payments are non-refundable. If you have any issues, please reach out to <a href="mailto:support@shipfeat.ai" className="text-[#FF4C29] hover:underline font-medium">support@shipfeat.ai</a>.
               </p>
             </div>
           </div>
 
           <div className="rounded-xl border border-gray-800 bg-gray-900/50 p-6 text-center">
             <h2 className="text-lg font-semibold text-white mb-2">Questions?</h2>
-            <p className="text-gray-400">Contact us at <a href="mailto:dinesh@tearless.ai" className="text-[#FF4C29] hover:underline font-medium">dinesh@tearless.ai</a></p>
+            <p className="text-gray-400">Contact us at <a href="mailto:support@shipfeat.ai" className="text-[#FF4C29] hover:underline font-medium">support@shipfeat.ai</a></p>
           </div>
         </div>
       </div>
