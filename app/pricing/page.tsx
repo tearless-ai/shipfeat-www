@@ -52,9 +52,9 @@ const features: TierFeature[] = [
   },
   {
     label: "Build history",
-    starter: "Last 10",
-    pro: "Unlimited",
-    team: "Unlimited",
+    starter: "50 retained",
+    pro: "50 retained",
+    team: "Custom",
   },
   {
     label: "Audit log",
@@ -204,7 +204,7 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="1 project" />
                 <FeatureRow icon={Users} text="1 seat" />
                 <FeatureRow icon={Palette} text="Default widget only" />
-                <FeatureRow icon={History} text="Last 10 builds" />
+                <FeatureRow icon={History} text="50 builds retained" />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
@@ -245,7 +245,7 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="3 projects" highlight />
                 <FeatureRow icon={Users} text="5 seats" highlight />
                 <FeatureRow icon={Palette} text="Full widget customization" highlight />
-                <FeatureRow icon={History} text="Unlimited build history" highlight />
+                <FeatureRow icon={History} text="50 builds retained" highlight />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
@@ -281,7 +281,7 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="Custom projects" />
                 <FeatureRow icon={Users} text="Custom seats" />
                 <FeatureRow icon={Palette} text="Custom widget" />
-                <FeatureRow icon={History} text="Unlimited build history" check />
+                <FeatureRow icon={History} text="Custom retention" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
@@ -401,8 +401,12 @@ export default function PricingPage() {
               a="Yes. Cancel or downgrade before the trial ends and you won't be charged for Pro. After that, cancel anytime — no contracts, no commitments."
             />
             <FAQItem
-              q="What frameworks work?"
-              a="Modern JS/TS codebases — Next.js, React, Vue, and similar. The AI reads your code structure and matches your patterns."
+              q="What kind of projects work best?"
+              a="Single-repo web apps built with modern frameworks — Next.js, React, Vue, Rails, Django, Laravel. Your repo needs a CI pipeline (tests, lint, or typecheck) so the AI can verify its work. Monorepos and microservices aren't supported yet."
+            />
+            <FAQItem
+              q="What kinds of features can ShipFeat build?"
+              a="Think 'add a search bar to the users page' or 'add email notification when an order ships.' New pages, CRUD features, UI tweaks, simple integrations. Not designed for complex refactors, performance tuning, or changes requiring deep domain expertise. If it would take a junior dev a day, ShipFeat can probably do it. If it would take a senior dev a week, it can't."
             />
             <FAQItem
               q="Need custom terms?"

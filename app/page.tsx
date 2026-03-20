@@ -7,6 +7,8 @@ import {
   GitPullRequest,
   CheckCircle2,
   Globe,
+  Check,
+  X,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
@@ -18,15 +20,17 @@ export default function Home() {
       <section className="pt-28 pb-24">
         <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-            Turn feature requests into
+            Ship the features your
             <br />
-            pull requests.{" "}
-            <span className="text-[#FF4C29]">Automatically.</span>
+            users actually{" "}
+            <span className="text-[#FF4C29]">want.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Your users describe what they need. ShipFeat reads your codebase,
-            generates the code, and opens a PR with a live preview. You just
-            review and merge.
+            Your customers submit requests. AI reads your codebase, writes the
+            code, and opens a PR. You review and merge.
+          </p>
+          <p className="text-sm text-gray-500">
+            For small SaaS teams with more ideas than engineering hours.
           </p>
           <div className="flex items-center justify-center gap-4 pt-4">
             <EarlyAccessButton
@@ -236,6 +240,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Built for — ICP clarity */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
+              Who it&apos;s for
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+              Built for small SaaS teams
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              ShipFeat works best when your app is a single-repo web product and your
+              backlog is full of features your users keep asking for.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+            {/* Great at */}
+            <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="p-1.5 rounded bg-emerald-500/10">
+                  <Check size={14} className="text-emerald-400" />
+                </div>
+                <span className="text-sm font-semibold text-emerald-400">ShipFeat is great at</span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "New pages and routes",
+                  "CRUD features (model + API + UI)",
+                  "UI improvements and settings",
+                  "Simple integrations and webhooks",
+                  "Bug fixes your users report",
+                  "Adding filters, toggles, and search",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-300">
+                    <Check size={14} className="text-emerald-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Not designed for */}
+            <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="p-1.5 rounded bg-gray-800">
+                  <X size={14} className="text-gray-500" />
+                </div>
+                <span className="text-sm font-semibold text-gray-500">Not designed for</span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Complex architecture redesigns",
+                  "Performance optimization",
+                  "Mobile app development",
+                  "Cross-service / microservice changes",
+                  "Changes touching 10+ files",
+                  "Deep domain-specific business logic",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-500">
+                    <X size={14} className="text-gray-700 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 60/40 callout */}
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-lg border border-[#FF4C29]/20 bg-[#FF4C29]/[0.04] px-6 py-5 text-center">
+              <p className="text-base font-semibold text-white mb-1">
+                The 60/40 rule
+              </p>
+              <p className="text-sm text-gray-400">
+                ShipFeat handles the 60% of requests that are straightforward — new
+                pages, settings, filters, toggles — so your engineers can focus on
+                the 40% that actually require their brain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Feature 1 — Widget */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
@@ -375,8 +463,8 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
                 Bring your own API key from Anthropic or OpenAI. Pick the model
-                that fits your budget and quality bar. ShipFeat never stores or
-                proxies your key — it goes straight to the provider.
+                that fits your budget and quality bar. Both keys stored
+                separately — switch providers without re-entering.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm text-gray-300">
@@ -401,21 +489,21 @@ export default function Home() {
                 <div>
                   <p className="text-xs text-gray-400 mb-2">Provider</p>
                   <div className="flex gap-2">
-                    <span className="px-3 py-1.5 rounded-lg bg-[#FF4C29]/10 border border-[#FF4C29]/30 text-xs font-medium text-[#FF4C29]">Anthropic</span>
-                    <span className="px-3 py-1.5 rounded-lg bg-[#141B2D] border border-gray-800/60 text-xs text-gray-500">OpenAI</span>
+                    <span className="px-3 py-1.5 rounded-lg bg-[#141B2D] border border-gray-800/60 text-xs text-gray-500">Anthropic</span>
+                    <span className="px-3 py-1.5 rounded-lg bg-[#FF4C29]/10 border border-[#FF4C29]/30 text-xs font-medium text-[#FF4C29]">OpenAI</span>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 mb-2">API Key</p>
+                  <p className="text-xs text-gray-400 mb-2">OpenAI API Key</p>
                   <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#141B2D] border border-gray-800/60">
-                    <span className="text-xs text-gray-500 font-mono">sk-ant-••••••••••••QeQAA</span>
+                    <span className="text-xs text-gray-500 font-mono">sk-••••••••••••7xKm</span>
                     <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">verified</span>
                   </div>
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 mb-2">Model</p>
                   <div className="px-3 py-2 rounded-lg bg-[#141B2D] border border-gray-800/60">
-                    <span className="text-xs text-white">Claude Sonnet 4 (Latest)</span>
+                    <span className="text-xs text-white">GPT-5.4</span>
                   </div>
                 </div>
               </div>
@@ -515,7 +603,7 @@ export default function Home() {
             merge.
           </p>
           <p className="text-sm text-gray-500 mb-10">
-            7-day free trial · Full Pro features · 5 builds included
+            For SaaS teams with 1–3 engineers and 100 feature requests.
           </p>
           <EarlyAccessButton
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4C29] hover:bg-[#E5421F] text-white font-semibold rounded-lg transition-all shadow-lg shadow-[#FF4C29]/25 hover:shadow-[#FF4C29]/40 text-base"
