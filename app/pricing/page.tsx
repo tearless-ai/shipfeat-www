@@ -173,7 +173,7 @@ export default function PricingPage() {
               Start with a 7-day free trial
             </p>
             <p className="text-sm text-gray-400">
-              Full Pro features · 5 builds included · Card required
+              Full Pro features · Analytics · Widget customization · 5 builds · Card required
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Auto-converts to Pro ($99/mo) after 7 days. Downgrade or cancel anytime.
@@ -359,7 +359,7 @@ export default function PricingPage() {
               </div>
               <p className="text-sm font-semibold text-white mb-1">Build for 7 days free</p>
               <p className="text-xs text-gray-500">
-                5 features included in your trial. Full Pro access.
+                5 features included. Full analytics, widget customization, and Pro access.
               </p>
             </div>
             <div>
