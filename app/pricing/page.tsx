@@ -416,6 +416,18 @@ export default function PricingPage() {
               a="Think 'add a search bar to the users page' or 'add email notification when an order ships.' New pages, CRUD features, UI tweaks, simple integrations. Not designed for complex refactors, performance tuning, or changes requiring deep domain expertise. If it would take a junior dev a day, ShipFeat can probably do it. If it would take a senior dev a week, it can't."
             />
             <FAQItem
+              q="What's in the Analytics dashboard?"
+              a="Pipeline health (build success rates, time-to-ship, failure breakdown), AI cost tracking (spend per feature, token usage, model comparison), and submission insights (approval rates, volume trends, top requesters). Available on Pro and Team plans."
+            />
+            <FAQItem
+              q="Can I customize the widget?"
+              a="Pro plans get full customization: dark or light theme, custom form labels and placeholders, custom submit button text, custom success messages, and the option to remove ShipFeat branding. Starter gets the standard widget. All customizations survive plan changes — upgrade and your settings are restored instantly."
+            />
+            <FAQItem
+              q="How long is the free trial?"
+              a="7 days with 5 features included. Full Pro access — analytics, widget customization, webhooks, and audit log. Card required upfront. Auto-converts to Pro at $99/mo unless you cancel or downgrade."
+            />
+            <FAQItem
               q="Need custom terms?"
               a={
                 <>
@@ -426,10 +438,6 @@ export default function PricingPage() {
                   for volume pricing, SSO, or anything custom.
                 </>
               }
-            />
-            <FAQItem
-              q="How long is the free trial?"
-              a="7 days with 5 features included. Full Pro access. Card required upfront. Auto-converts to Pro at $99/mo unless you cancel or downgrade."
             />
           </div>
         </div>
