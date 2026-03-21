@@ -6,11 +6,12 @@ import {
   Users,
   Github,
   Palette,
-  Mail,
   Shield,
   Clock,
-  History,
   Building2,
+  BarChart3,
+  Webhook,
+  Headset,
 } from "lucide-react";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
@@ -46,30 +47,30 @@ const features: TierFeature[] = [
   },
   {
     label: "Widget customization",
-    starter: "Default only",
-    pro: "Full (colors, text, position)",
-    team: "Custom",
+    starter: "Standard widget",
+    pro: "Full (theme, labels, branding, preview)",
+    team: "Full",
   },
   {
-    label: "Build history",
-    starter: "50 retained",
-    pro: "50 retained",
-    team: "Custom",
+    label: "Analytics dashboard",
+    starter: false,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Webhooks",
+    starter: false,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Widget branding removal",
+    starter: false,
+    pro: true,
+    team: true,
   },
   {
     label: "Audit log",
-    starter: false,
-    pro: true,
-    team: true,
-  },
-  {
-    label: "Email notifications",
-    starter: false,
-    pro: true,
-    team: true,
-  },
-  {
-    label: "Priority support",
     starter: false,
     pro: true,
     team: true,
@@ -88,6 +89,12 @@ const features: TierFeature[] = [
   },
   {
     label: "Live Vercel previews",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Email support",
     starter: true,
     pro: true,
     team: true,
@@ -203,11 +210,11 @@ export default function PricingPage() {
                 <FeatureRow icon={Zap} text="10 features / month" />
                 <FeatureRow icon={Github} text="1 project" />
                 <FeatureRow icon={Users} text="1 seat" />
-                <FeatureRow icon={Palette} text="Default widget only" />
-                <FeatureRow icon={History} text="50 builds retained" />
+                <FeatureRow icon={Palette} text="Standard widget" />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
+                <FeatureRow icon={Headset} text="Email support" check />
               </div>
             </div>
 
@@ -244,14 +251,14 @@ export default function PricingPage() {
                 <FeatureRow icon={Zap} text="50 features / month" highlight />
                 <FeatureRow icon={Github} text="3 projects" highlight />
                 <FeatureRow icon={Users} text="5 seats" highlight />
-                <FeatureRow icon={Palette} text="Full widget customization" highlight />
-                <FeatureRow icon={History} text="50 builds retained" highlight />
+                <FeatureRow icon={Palette} text="Full widget customization + branding removal" highlight />
+                <FeatureRow icon={BarChart3} text="Analytics dashboard" highlight />
+                <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
                 <FeatureRow icon={Clock} text="Audit log" check />
-                <FeatureRow icon={Mail} text="Email notifications" check />
-                <FeatureRow icon={Users} text="Priority support" check />
+                <FeatureRow icon={Headset} text="Email support" check />
               </div>
             </div>
 
@@ -280,14 +287,14 @@ export default function PricingPage() {
                 <FeatureRow icon={Zap} text="Custom features / month" />
                 <FeatureRow icon={Github} text="Custom projects" />
                 <FeatureRow icon={Users} text="Custom seats" />
-                <FeatureRow icon={Palette} text="Custom widget" />
-                <FeatureRow icon={History} text="Custom retention" check />
+                <FeatureRow icon={Palette} text="Full widget customization" />
+                <FeatureRow icon={BarChart3} text="Analytics dashboard" check />
+                <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
                 <FeatureRow icon={Clock} text="Audit log" check />
-                <FeatureRow icon={Mail} text="Email notifications" check />
-                <FeatureRow icon={Users} text="Priority support" check />
+                <FeatureRow icon={Headset} text="Email support" check />
               </div>
             </div>
           </div>
