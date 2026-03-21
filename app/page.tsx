@@ -9,6 +9,11 @@ import {
   Globe,
   Check,
   X,
+  BarChart3,
+  TrendingUp,
+  DollarSign,
+  Users,
+  ClipboardList,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
@@ -351,7 +356,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <MessageSquareText size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Custom colors, position, and copy</span>
+                  <span>Dark/light theme, custom labels, branding removal <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Eye size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Live preview in settings — see changes before publishing</span>
                 </li>
               </ul>
             </div>
@@ -443,6 +452,10 @@ export default function Home() {
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
                   <span>Test on live preview URL before merge</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <ClipboardList size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Full audit log of every action <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
                 </li>
               </ul>
             </div>
@@ -578,6 +591,110 @@ export default function Home() {
                   <span>Click merge when you&apos;re satisfied</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 5 — Analytics dashboard */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2.5 rounded-lg bg-[#FF4C29]/10">
+                  <BarChart3 size={20} className="text-[#FF4C29]" />
+                </div>
+                <span className="text-[10px] font-bold text-[#FF4C29] uppercase tracking-wider px-2 py-0.5 rounded bg-[#FF4C29]/10 border border-[#FF4C29]/25">Pro</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Know what&apos;s working — and what it costs
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Track build success rates, AI spend per feature, and which users
+                submit the most. Built-in analytics so you ship smarter, not
+                just faster.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <TrendingUp size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Pipeline health: success rates, time-to-ship, failure breakdown</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <DollarSign size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Cost tracking: spend per feature, model comparison, token usage</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Users size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Submission insights: approval rates, volume trends, top requesters</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Visual — analytics mockup */}
+            <div className="rounded-xl border border-gray-800/60 bg-[#0D1117] p-6">
+              <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-5">Analytics Overview</p>
+
+              {/* KPI row */}
+              <div className="grid grid-cols-3 gap-3 mb-6">
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Success Rate</p>
+                  <p className="text-lg font-bold text-emerald-400">87%</p>
+                  <p className="text-[9px] text-emerald-400/60">+12% vs last month</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Avg Cost</p>
+                  <p className="text-lg font-bold text-white">$0.42</p>
+                  <p className="text-[9px] text-gray-500">per feature</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Time to Ship</p>
+                  <p className="text-lg font-bold text-white">4.2m</p>
+                  <p className="text-[9px] text-gray-500">median</p>
+                </div>
+              </div>
+
+              {/* Mini bar chart */}
+              <div>
+                <p className="text-[10px] text-gray-500 mb-3">Builds — Last 7 Days</p>
+                <div className="flex items-end gap-1.5 h-16">
+                  {[
+                    { h: 60, s: 3, f: 1 },
+                    { h: 45, s: 2, f: 0 },
+                    { h: 75, s: 4, f: 1 },
+                    { h: 90, s: 5, f: 0 },
+                    { h: 55, s: 3, f: 0 },
+                    { h: 100, s: 6, f: 1 },
+                    { h: 70, s: 4, f: 0 },
+                  ].map((d, i) => (
+                    <div key={i} className="flex-1 flex flex-col gap-0.5 items-stretch" style={{ height: `${d.h}%` }}>
+                      <div className="flex-1 rounded-t bg-[#FF4C29]/80" />
+                      {d.f > 0 && <div className="rounded-b bg-red-400/40" style={{ height: `${(d.f / (d.s + d.f)) * 100}%`, minHeight: '2px' }} />}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-between mt-1.5">
+                  <span className="text-[8px] text-gray-600">Mon</span>
+                  <span className="text-[8px] text-gray-600">Tue</span>
+                  <span className="text-[8px] text-gray-600">Wed</span>
+                  <span className="text-[8px] text-gray-600">Thu</span>
+                  <span className="text-[8px] text-gray-600">Fri</span>
+                  <span className="text-[8px] text-gray-600">Sat</span>
+                  <span className="text-[8px] text-gray-600">Sun</span>
+                </div>
+              </div>
+
+              {/* Legend */}
+              <div className="flex items-center gap-4 mt-4 pt-3 border-t border-gray-800/60">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-sm bg-[#FF4C29]/80" />
+                  <span className="text-[9px] text-gray-500">Successful</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-sm bg-red-400/40" />
+                  <span className="text-[9px] text-gray-500">Failed</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
