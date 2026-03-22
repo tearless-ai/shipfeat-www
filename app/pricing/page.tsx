@@ -13,6 +13,7 @@ import {
   Webhook,
   Headset,
   FileSearch,
+  Slack,
 } from "lucide-react";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
@@ -77,10 +78,10 @@ const features: TierFeature[] = [
     team: "Full",
   },
   {
-    label: "Notifications (email + in-app)",
-    starter: true,
-    pro: true,
-    team: true,
+    label: "Notifications",
+    starter: "Email + in-app",
+    pro: "Email + in-app + Slack",
+    team: "Email + in-app + Slack",
   },
   {
     label: "Spec refinement",
@@ -251,7 +252,7 @@ export default function PricingPage() {
               </div>
             </div>
 
-            {/* Pro — emphasized */}
+            {/* Pro — emphasized — */}
             <div className="relative rounded-lg border border-[#FF4C29]/40 bg-[#141B2D] p-8 flex flex-col h-full shadow-lg shadow-[#FF4C29]/10 ring-1 ring-[#FF4C29]/20">
               {/* Glow */}
               <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-40 rounded-full bg-[#FF4C29]/[0.08] blur-[60px] pointer-events-none" />
@@ -287,6 +288,7 @@ export default function PricingPage() {
                 <FeatureRow icon={Palette} text="Full widget customization + branding removal" highlight />
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" highlight />
                 <FeatureRow icon={FileSearch} text="Post-build insights (diffs, narrative, security)" highlight />
+                <FeatureRow icon={Slack} text="Slack notifications" highlight />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
@@ -326,6 +328,7 @@ export default function PricingPage() {
                 <FeatureRow icon={Palette} text="Full widget customization" />
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" check />
                 <FeatureRow icon={FileSearch} text="Post-build insights" check />
+                <FeatureRow icon={Slack} text="Slack notifications" check />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />

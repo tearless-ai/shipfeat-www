@@ -797,7 +797,7 @@ export default function Home() {
                 Stay in the loop — your way
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Choose email, in-app, or both for every notification type.
+                Choose email, in-app, or Slack for every notification type.
                 Your team gets alerts when builds fail, specs are ready, or PRs
                 need review. Your users get notified when their request ships.
               </p>
@@ -812,7 +812,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <Users size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Dual-channel — toggle email and in-app independently per event</span>
+                  <span>Three channels — toggle email, in-app, and Slack independently per event</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <MessageSquareText size={16} className="text-[#FF4C29] shrink-0" />
