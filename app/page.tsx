@@ -14,6 +14,11 @@ import {
   DollarSign,
   Users,
   ClipboardList,
+  Bell,
+  FileSearch,
+  ShieldCheck,
+  Sparkles,
+  Zap,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
@@ -31,8 +36,8 @@ export default function Home() {
             <span className="text-[#FF4C29]">want.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Your customers submit requests. AI reads your codebase, writes the
-            code, and opens a PR. You review and merge.
+            Your customers submit requests. ShipFeat reads your codebase, writes
+            the code, and opens a PR. You review and merge.
           </p>
           <p className="text-sm text-gray-500">
             For small SaaS teams with more ideas than engineering hours.
@@ -121,10 +126,10 @@ export default function Home() {
               <div className="lg:w-1/2 lg:text-left lg:pl-16 pl-16 lg:pl-16">
                 <div className="inline-flex items-center gap-2 mb-2">
                   <Code2 size={16} className="text-[#FF4C29]" />
-                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">AI Spec</span>
+                  <span className="text-xs font-semibold text-[#FF4C29] uppercase tracking-wider">Spec Generation</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">
-                  AI reads your code and writes a plan
+                  ShipFeat reads your code and writes a plan
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
                   ShipFeat clones your repo, understands the structure, and
@@ -162,7 +167,7 @@ export default function Home() {
                   Code written, PR opened, preview live
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  The AI generates production-ready code, opens a pull request
+                  ShipFeat generates production-ready code, opens a pull request
                   on your repo, and Vercel spins up a live preview. Review the
                   diff and test it on a real URL.
                 </p>
@@ -301,7 +306,7 @@ export default function Home() {
                   "Performance optimization",
                   "Mobile app development",
                   "Cross-service / microservice changes",
-                  "Changes touching 10+ files",
+                  "Large changes touching 20+ files",
                   "Deep domain-specific business logic",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-gray-500">
@@ -410,7 +415,7 @@ export default function Home() {
                     <Eye size={14} className="text-amber-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs font-medium text-white">AI spec ready for review</p>
+                    <p className="text-xs font-medium text-white">Spec ready for review</p>
                     <p className="text-xs text-gray-500">3 files · 47 lines · 2 components</p>
                   </div>
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-medium">REVIEW</span>
@@ -436,7 +441,7 @@ export default function Home() {
                 Nothing ships without your approval
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                You review the AI&apos;s plan before any code is written. You review
+                You review the plan before any code is written. You review
                 the PR and live preview before anything merges. Two approval
                 gates, full control at every step.
               </p>
@@ -611,7 +616,7 @@ export default function Home() {
                 Know what&apos;s working — and what it costs
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Track build success rates, AI spend per feature, and which users
+                Track build success rates, cost per feature, and which users
                 submit the most. Built-in analytics so you ship smarter, not
                 just faster.
               </p>
@@ -695,6 +700,231 @@ export default function Home() {
                   <span className="text-[9px] text-gray-500">Failed</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 6 — Post-build insights */}
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Visual — insights mockup */}
+            <div className="order-2 lg:order-1 rounded-xl border border-gray-800/60 bg-[#0B0F19] p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="flex gap-1">
+                  <span className="px-3 py-1.5 rounded-lg bg-[#FF4C29]/10 border border-[#FF4C29]/30 text-xs font-medium text-[#FF4C29]">Overview</span>
+                  <span className="px-3 py-1.5 rounded-lg bg-[#141B2D] border border-gray-800/60 text-xs text-gray-500">Changes</span>
+                  <span className="px-3 py-1.5 rounded-lg bg-[#141B2D] border border-gray-800/60 text-xs text-gray-500">Security <span className="text-[9px] ml-1 px-1 py-0.5 rounded bg-amber-500/10 text-amber-400">2</span></span>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Impact</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="flex-1 h-1.5 rounded-full bg-gray-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-emerald-400" style={{ width: "60%" }} />
+                    </div>
+                    <span className="text-[10px] text-gray-400">3 files</span>
+                  </div>
+                  <div className="flex gap-3 text-[10px]">
+                    <span className="text-emerald-400">+47 added</span>
+                    <span className="text-red-400">-3 removed</span>
+                    <span className="text-gray-500">2 components</span>
+                  </div>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">Change Summary</p>
+                  <p className="text-xs text-gray-300 leading-relaxed">Added a dark mode toggle to the settings page using the existing theme context. Created a new ThemeToggle component and wired it into the settings layout.</p>
+                </div>
+                <div className="rounded-lg bg-amber-500/5 border border-amber-500/20 p-3">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck size={12} className="text-amber-400" />
+                    <p className="text-[10px] text-amber-400 font-medium">2 security flags</p>
+                  </div>
+                  <p className="text-[10px] text-gray-500 mt-1">localStorage usage detected · No secrets found</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2.5 rounded-lg bg-[#FF4C29]/10">
+                  <FileSearch size={20} className="text-[#FF4C29]" />
+                </div>
+                <span className="text-[10px] font-bold text-[#FF4C29] uppercase tracking-wider px-2 py-0.5 rounded bg-[#FF4C29]/10 border border-[#FF4C29]/25">Pro</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Understand every change before you merge
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Post-build insights give you the full picture — inline diffs,
+                plain-English change summaries, impact analysis, and security
+                scans. Review with confidence, not guesswork.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Code2 size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Inline diff view — see exactly what changed, line by line</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Sparkles size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Plain-English change summary for non-technical reviewers</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <ShieldCheck size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Security & quality flags — secrets, console.logs, TODOs</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Build verification report with test results</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 7 — Notifications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
+                <Bell size={20} className="text-[#FF4C29]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Stay in the loop — your way
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Choose email, in-app, or both for every notification type.
+                Your team gets alerts when builds fail, specs are ready, or PRs
+                need review. Your users get notified when their request ships.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Bell size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>In-app notification bell with unread badge</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>9 notification types — new request, spec ready, build failed, PR ready, shipped</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Users size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Dual-channel — toggle email and in-app independently per event</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <MessageSquareText size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>End-user emails — notify submitters when their request ships</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Visual — notification panel mockup */}
+            <div className="rounded-xl border border-gray-800/60 bg-[#0D1117] p-0 overflow-hidden">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800/60 bg-white/[0.02]">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-white">Notifications</span>
+                  <span className="text-[10px] font-medium text-gray-400 bg-white/[0.06] px-1.5 py-0.5 rounded-full">3 new</span>
+                </div>
+                <span className="text-[11px] text-gray-500">Mark all read</span>
+              </div>
+              <div className="divide-y divide-gray-800/50">
+                {[
+                  { icon: "🔀", color: "text-teal-400", bg: "bg-teal-400/10", text: "PR #42 for \"Add dark mode toggle\" needs review.", time: "5m ago", unread: true },
+                  { icon: "⚠️", color: "text-red-400", bg: "bg-red-400/10", text: "Build failed for \"Update user settings\" on DemoApp.", time: "12m ago", unread: true },
+                  { icon: "📋", color: "text-indigo-400", bg: "bg-indigo-400/10", text: "Spec for \"Add search bar\" is ready for review.", time: "1h ago", unread: true },
+                  { icon: "🚀", color: "text-emerald-400", bg: "bg-emerald-400/10", text: "\"Fix mobile nav\" has been shipped.", time: "3h ago", unread: false },
+                ].map((n, i) => (
+                  <div key={i} className={`flex items-start gap-3 px-4 py-3.5 ${n.unread ? "bg-white/[0.025]" : ""}`}>
+                    <div className={`shrink-0 w-8 h-8 rounded-full ${n.bg} flex items-center justify-center text-xs`}>
+                      {n.icon}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className={`text-[13px] leading-relaxed ${n.unread ? "text-gray-200" : "text-gray-500"}`}>{n.text}</p>
+                      <p className="text-[11px] text-gray-600 mt-1">{n.time}</p>
+                    </div>
+                    {n.unread && <div className="shrink-0 mt-2.5"><div className="w-2 h-2 rounded-full bg-[#FF4C29]" /></div>}
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-gray-800/60 px-4 py-2.5 bg-white/[0.01]">
+                <p className="text-[11px] text-gray-600 text-center">Showing latest 4 notifications</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 8 — Value Delivered */}
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Visual — value dashboard mockup */}
+            <div className="order-2 lg:order-1 rounded-xl border border-gray-800/60 bg-[#0B0F19] p-6">
+              <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-5">Value Delivered</p>
+
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">ROI</p>
+                  <p className="text-2xl font-bold text-white">2,489<span className="text-sm text-gray-500 ml-0.5">x</span></p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Shipped</p>
+                  <p className="text-2xl font-bold text-emerald-400">19</p>
+                  <p className="text-[9px] text-gray-500">features</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Dev Hours Saved</p>
+                  <p className="text-2xl font-bold text-white">21.9h</p>
+                  <p className="text-[9px] text-gray-500">$3,285 equiv.</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                  <p className="text-[10px] text-gray-500 mb-1">Total Cost</p>
+                  <p className="text-2xl font-bold text-white">$1.32</p>
+                  <p className="text-[9px] text-gray-500">$0.07 avg/feature</p>
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-[10px] text-gray-500">Ship Rate</p>
+                  <p className="text-[10px] text-emerald-400 font-medium">90%</p>
+                </div>
+                <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
+                  <div className="h-full rounded-full bg-emerald-400" style={{ width: "90%" }} />
+                </div>
+                <p className="text-[9px] text-gray-500 mt-1.5">19 of 21 requests shipped</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
+                <Zap size={20} className="text-[#FF4C29]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Prove the value. Show the ROI.
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                ShipFeat tracks every feature shipped — the dev hours saved,
+                the cost per feature, and your ship rate. Real numbers to
+                justify the tool to your team.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <TrendingUp size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>ROI calculated from dev hours saved vs. actual cost</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <DollarSign size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Cost per feature with model-level breakdown</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Ship rate and median time-to-ship</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

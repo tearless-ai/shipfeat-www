@@ -12,6 +12,7 @@ import {
   BarChart3,
   Webhook,
   Headset,
+  FileSearch,
 } from "lucide-react";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
@@ -66,6 +67,36 @@ const features: TierFeature[] = [
   {
     label: "Widget branding removal",
     starter: false,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Post-build insights",
+    starter: "Basic (file list, impact, tests)",
+    pro: "Full (diffs, narrative, security scan)",
+    team: "Full",
+  },
+  {
+    label: "Notifications (email + in-app)",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Spec refinement",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Build retry & self-healing",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Value delivered / ROI tracking",
+    starter: true,
     pro: true,
     team: true,
   },
@@ -173,7 +204,7 @@ export default function PricingPage() {
               Start with a 7-day free trial
             </p>
             <p className="text-sm text-gray-400">
-              Full Pro features · Analytics · Widget customization · 5 builds · Card required
+              Full Pro features · Analytics · Widget customization · 5 features · Card required
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Auto-converts to Pro ($99/mo) after 7 days. Downgrade or cancel anytime.
@@ -214,6 +245,8 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
+                <FeatureRow icon={Headset} text="Email & in-app notifications" check />
+                <FeatureRow icon={Zap} text="Value Delivered / ROI tracking" check />
                 <FeatureRow icon={Headset} text="Email support" check />
               </div>
             </div>
@@ -253,10 +286,13 @@ export default function PricingPage() {
                 <FeatureRow icon={Users} text="5 seats" highlight />
                 <FeatureRow icon={Palette} text="Full widget customization + branding removal" highlight />
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" highlight />
+                <FeatureRow icon={FileSearch} text="Post-build insights (diffs, narrative, security)" highlight />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
+                <FeatureRow icon={Headset} text="Email & in-app notifications" check />
+                <FeatureRow icon={Zap} text="Value Delivered / ROI tracking" check />
                 <FeatureRow icon={Clock} text="Audit log" check />
                 <FeatureRow icon={Headset} text="Email support" check />
               </div>
@@ -289,10 +325,13 @@ export default function PricingPage() {
                 <FeatureRow icon={Users} text="Custom seats" />
                 <FeatureRow icon={Palette} text="Full widget customization" />
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" check />
+                <FeatureRow icon={FileSearch} text="Post-build insights" check />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
+                <FeatureRow icon={Headset} text="Email & in-app notifications" check />
+                <FeatureRow icon={Zap} text="Value Delivered / ROI tracking" check />
                 <FeatureRow icon={Clock} text="Audit log" check />
                 <FeatureRow icon={Headset} text="Email support" check />
               </div>
@@ -389,7 +428,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <FAQItem
               q="What counts as a feature?"
-              a="A feature counts when you approve the AI-generated spec and code generation begins. Submitting requests and reviewing specs are always free."
+              a="A feature counts when you approve the generated spec and code generation begins. Submitting requests and reviewing specs are always free."
             />
             <FAQItem
               q="Do I need my own AI API key?"
@@ -400,8 +439,8 @@ export default function PricingPage() {
               a="You'll see an upgrade prompt. Move to the next tier for more features, or wait until next month resets your count."
             />
             <FAQItem
-              q="What if the AI writes bad code?"
-              a="Nothing ships without approval. Review the spec first, then the PR with a live preview. Two gates, full control."
+              q="What if ShipFeat writes bad code?"
+              a="Nothing ships without your approval. Review the spec first, then the PR with a live preview. Two gates, full control."
             />
             <FAQItem
               q="Can I cancel anytime?"
@@ -413,11 +452,11 @@ export default function PricingPage() {
             />
             <FAQItem
               q="What kinds of features can ShipFeat build?"
-              a="Think 'add a search bar to the users page' or 'add email notification when an order ships.' New pages, CRUD features, UI tweaks, simple integrations. Not designed for complex refactors, performance tuning, or changes requiring deep domain expertise. If it would take a junior dev a day, ShipFeat can probably do it. If it would take a senior dev a week, it can't."
+              a="Think 'add a search bar to the users page' or 'add email notification when an order ships.' New pages, CRUD features, UI tweaks, simple integrations. Not designed for complex refactors, performance tuning, or changes requiring deep domain expertise. If it would take a junior dev a day, ShipFeat can probably do it. If it would take a senior dev a week, it can't. Plus, you can refine specs with natural language before building — no need to start over if the plan needs adjusting."
             />
             <FAQItem
               q="What's in the Analytics dashboard?"
-              a="Pipeline health (build success rates, time-to-ship, failure breakdown), AI cost tracking (spend per feature, token usage, model comparison), and submission insights (approval rates, volume trends, top requesters). Available on Pro and Team plans."
+              a="Pipeline health (build success rates, time-to-ship, failure breakdown), cost tracking (spend per feature, token usage, model comparison), submission insights (approval rates, volume trends, top requesters), and a Value Delivered dashboard showing ROI, dev hours saved, and ship rate. Analytics are available on Pro and Team plans. Value Delivered is available on all plans."
             />
             <FAQItem
               q="Can I customize the widget?"

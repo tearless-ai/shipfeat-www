@@ -11,7 +11,7 @@ const STEPS = [
   },
   {
     icon: Sparkles,
-    label: "AI Spec",
+    label: "Spec",
     sublabel: "Reads code, writes a plan",
   },
   {

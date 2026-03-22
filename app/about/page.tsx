@@ -130,7 +130,7 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <p className="text-sm font-medium text-white mb-1">
-                      AI reads your codebase and writes a spec
+                      ShipFeat reads your codebase and writes a spec
                     </p>
                     <p className="text-xs text-gray-500">
                       You review and approve before any code is generated
@@ -164,7 +164,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-gray-400 leading-relaxed mb-5">
                 ShipFeat connects what your users ask for to what gets deployed.
-                A lightweight widget lives in your app. The AI reads your actual
+                A lightweight widget lives in your app. ShipFeat reads your actual
                 codebase, generates a structured spec, and — once you approve —
                 writes the code, opens a PR, and spins up a live preview.
               </p>

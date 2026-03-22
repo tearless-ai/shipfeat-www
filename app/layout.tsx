@@ -6,12 +6,12 @@ import { EarlyAccessProvider } from "@/components/EarlyAccessContext";
 import { EarlyAccessModal } from "@/components/EarlyAccessModal";
 
 export const metadata: Metadata = {
-  title: "ShipFeat — Your users ask. AI ships.",
+  title: "ShipFeat — Your users ask. ShipFeat ships.",
   description:
-    "Drop a widget in your app. Users submit enhancement requests. AI reads your codebase, writes the code, opens a PR with a live preview. You just approve.",
+    "Drop a widget in your app. Users submit enhancement requests. ShipFeat reads your codebase, writes the code, opens a PR with a live preview. You just approve.",
   metadataBase: new URL("https://shipfeat.ai"),
   openGraph: {
-    title: "ShipFeat — Your users ask. AI ships.",
+    title: "ShipFeat — Your users ask. ShipFeat ships.",
     description:
       "Enhancement requests from your users turn into pull requests. Automatically.",
     url: "https://shipfeat.ai",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ShipFeat — Your users ask. AI ships.",
+    title: "ShipFeat — Your users ask. ShipFeat ships.",
     description:
       "Enhancement requests from your users turn into pull requests. Automatically.",
   },

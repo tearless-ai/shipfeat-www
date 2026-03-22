@@ -69,7 +69,7 @@ export function EarlyAccessModal() {
             Get Early Access
           </h2>
           <p className="text-sm text-gray-400">
-            7-day free trial · Full Pro features · 5 builds included
+            7-day free trial · Full Pro features · 5 features included
           </p>
         </div>
 
