@@ -199,7 +199,7 @@ export default function PricingPage() {
 
       {/* Trial callout */}
       <section className="pt-10 pb-2">
-        <div className="max-w-3xl mx-auto px-8 lg:px-12">
+        <div className="max-w-4xl mx-auto px-8 lg:px-12">
           <div className="rounded-lg border border-[#FF4C29]/20 bg-[#FF4C29]/[0.04] px-6 py-5 text-center">
             <p className="text-base font-semibold text-white mb-1">
               Start with a 7-day free trial
@@ -216,7 +216,7 @@ export default function PricingPage() {
 
       {/* Pricing cards */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
             {/* Starter */}
@@ -345,7 +345,7 @@ export default function PricingPage() {
 
       {/* Comparison table (desktop only) */}
       <section className="pb-20 hidden md:block">
-        <div className="max-w-5xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <h2 className="text-xl font-semibold text-white mb-6 text-center">Compare plans</h2>
           <div className="rounded-lg border border-gray-800 overflow-hidden">
             <table className="w-full text-sm">
@@ -383,7 +383,7 @@ export default function PricingPage() {
 
       {/* How the trial works */}
       <section className="pb-24">
-        <div className="max-w-3xl mx-auto px-8 lg:px-12">
+        <div className="max-w-4xl mx-auto px-8 lg:px-12">
           <h2 className="text-xl font-semibold text-white mb-10 text-center">How the trial works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
@@ -419,7 +419,7 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-[#0D1117]">
-        <div className="max-w-6xl mx-auto px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="text-center mb-16">
             <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-4">
               FAQ

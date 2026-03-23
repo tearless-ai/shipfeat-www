@@ -73,7 +73,7 @@ export default function SupportPage() {
     <>
       {/* Hero */}
       <section className="pt-28 pb-16">
-        <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
           <p className="text-sm font-medium text-[#FF4C29] uppercase tracking-widest mb-6">
             Support
           </p>
@@ -212,7 +212,7 @@ export default function SupportPage() {
 
       {/* CTA */}
       <section className="pb-20">
-        <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
           <p className="text-sm text-gray-500 mb-4">
             Not a customer yet?
           </p>
