@@ -14,6 +14,12 @@ import {
   Headset,
   FileSearch,
   Slack,
+  FileText,
+  Megaphone,
+  GitMerge,
+  Gauge,
+  MessageSquareDiff,
+  Globe,
 } from "lucide-react";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
 
@@ -82,6 +88,36 @@ const features: TierFeature[] = [
     starter: "Email + in-app",
     pro: "Email + in-app + Slack",
     team: "Email + in-app + Slack",
+  },
+  {
+    label: "Changelog entries",
+    starter: "3 manual/mo + auto from shipped",
+    pro: "Unlimited + auto from shipped",
+    team: "Unlimited",
+  },
+  {
+    label: "Announcements",
+    starter: false,
+    pro: "Banner, overlay, toast",
+    team: "Banner, overlay, toast",
+  },
+  {
+    label: "Public changelog page",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "One-click merge",
+    starter: true,
+    pro: true,
+    team: true,
+  },
+  {
+    label: "Feasibility analysis",
+    starter: true,
+    pro: true,
+    team: true,
   },
   {
     label: "Spec refinement",
@@ -205,7 +241,7 @@ export default function PricingPage() {
               Start with a 7-day free trial
             </p>
             <p className="text-sm text-gray-400">
-              Full Pro features · Analytics · Widget customization · 5 features · Card required
+              Full Pro features · Analytics · Widget customization · Changelog · Announcements · Slack · 5 features · Card required
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Auto-converts to Pro ($99/mo) after 7 days. Downgrade or cancel anytime.
@@ -243,6 +279,11 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="1 project" />
                 <FeatureRow icon={Users} text="1 seat" />
                 <FeatureRow icon={Palette} text="Standard widget" />
+                <FeatureRow icon={FileText} text="3 manual changelogs / month" />
+                <FeatureRow icon={Globe} text="Public changelog page" check />
+                <FeatureRow icon={GitMerge} text="One-click merge" check />
+                <FeatureRow icon={Gauge} text="Feasibility analysis" check />
+                <FeatureRow icon={MessageSquareDiff} text="Spec refinement" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
                 <FeatureRow icon={Clock} text="Live Vercel previews" check />
@@ -289,6 +330,12 @@ export default function PricingPage() {
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" highlight />
                 <FeatureRow icon={FileSearch} text="Post-build insights (diffs, narrative, security)" highlight />
                 <FeatureRow icon={Slack} text="Slack notifications" highlight />
+                <FeatureRow icon={FileText} text="Unlimited changelogs" highlight />
+                <FeatureRow icon={Megaphone} text="Announcements (banner, overlay, toast)" highlight />
+                <FeatureRow icon={Globe} text="Public changelog page" check />
+                <FeatureRow icon={GitMerge} text="One-click merge" check />
+                <FeatureRow icon={Gauge} text="Feasibility analysis" check />
+                <FeatureRow icon={MessageSquareDiff} text="Spec refinement" check />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
@@ -326,9 +373,15 @@ export default function PricingPage() {
                 <FeatureRow icon={Github} text="Custom projects" />
                 <FeatureRow icon={Users} text="Custom seats" />
                 <FeatureRow icon={Palette} text="Full widget customization" />
+                <FeatureRow icon={FileText} text="Unlimited changelogs" check />
+                <FeatureRow icon={Megaphone} text="Announcements" check />
+                <FeatureRow icon={Globe} text="Public changelog page" check />
                 <FeatureRow icon={BarChart3} text="Analytics dashboard" check />
                 <FeatureRow icon={FileSearch} text="Post-build insights" check />
                 <FeatureRow icon={Slack} text="Slack notifications" check />
+                <FeatureRow icon={GitMerge} text="One-click merge" check />
+                <FeatureRow icon={Gauge} text="Feasibility analysis" check />
+                <FeatureRow icon={MessageSquareDiff} text="Spec refinement" check />
                 <FeatureRow icon={Webhook} text="Webhooks" check />
                 <FeatureRow icon={Github} text="GitHub App" check />
                 <FeatureRow icon={Shield} text="API key encryption" check />
@@ -466,8 +519,12 @@ export default function PricingPage() {
               a="Pro plans get full customization: dark or light theme, custom form labels and placeholders, custom submit button text, custom success messages, and the option to remove ShipFeat branding. Starter gets the standard widget. All customizations survive plan changes — upgrade and your settings are restored instantly."
             />
             <FAQItem
+              q="What are Changelog and Announcements?"
+              a="Changelog lets you keep a public, SEO-friendly record of what you've shipped. Entries are auto-generated when features go live, and you can write manual entries with a rich text editor. Announcements let you show banners, overlays, or toasts directly in your app through the widget — perfect for product updates, maintenance notices, or promos. Changelog is available on all plans (Starter: 3 manual entries/month). Announcements are Pro and Team only."
+            />
+            <FAQItem
               q="How long is the free trial?"
-              a="7 days with 5 features included. Full Pro access — analytics, widget customization, webhooks, and audit log. Card required upfront. Auto-converts to Pro at $99/mo unless you cancel or downgrade."
+              a="7 days with 5 features included. Full Pro access — analytics, widget customization, changelog, announcements, webhooks, and audit log. Card required upfront. Auto-converts to Pro at $99/mo unless you cancel or downgrade."
             />
             <FAQItem
               q="Need custom terms?"

@@ -19,6 +19,14 @@ import {
   ShieldCheck,
   Sparkles,
   Zap,
+  FileText,
+  Megaphone,
+  GitMerge,
+  Gauge,
+  MessageSquareDiff,
+  Rss,
+  Calendar,
+  Palette,
 } from "lucide-react";
 import { FlowDiagram } from "@/components/FlowDiagram";
 import { EarlyAccessButton } from "@/components/EarlyAccessButton";
@@ -335,7 +343,7 @@ export default function Home() {
       </section>
 
       {/* Feature 1 — Widget */}
-      <section className="py-24">
+      <section id="features" className="py-24">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -343,50 +351,61 @@ export default function Home() {
                 <MessageSquareText size={20} className="text-[#FF4C29]" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                A widget that lives in your app
+                One widget. Three superpowers.
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Users submit enhancement requests without leaving your product.
-                Takes 10 seconds, no account needed. You control which domains
-                can submit.
+                A single embed adds feature requests, a public changelog, and
+                in-app announcements to your product. One line of code, three
+                ways to connect with your users.
               </p>
               <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <MessageSquareText size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Collect feature requests — 10 seconds, no account needed</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Rss size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Show your changelog — auto-generated when features ship</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Megaphone size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Display announcements — banners, overlays, toasts <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
+                </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <Code2 size={16} className="text-[#FF4C29] shrink-0" />
                   <span>One line of code to install</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <Globe size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Domain allowlist for security</span>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-gray-300">
-                  <MessageSquareText size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Dark/light theme, custom labels, branding removal <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-gray-300">
-                  <Eye size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Live preview in settings — see changes before publishing</span>
+                  <span>Domain allowlist, dark/light theme, custom branding <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
                 </li>
               </ul>
             </div>
 
-            {/* Visual — widget code snippet */}
-            <div className="rounded-xl border border-gray-800/60 bg-[#0D1117] p-6 font-mono text-sm overflow-hidden">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-3 h-3 rounded-full bg-red-500/60" />
-                <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                <span className="w-3 h-3 rounded-full bg-green-500/60" />
-                <span className="text-gray-600 text-xs ml-2">index.html</span>
+            {/* Visual — widget with 3 tabs */}
+            <div className="rounded-xl border border-gray-800/60 bg-[#0D1117] p-6 overflow-hidden">
+              {/* Tab bar */}
+              <div className="flex gap-1 mb-5 p-1 rounded-lg bg-[#141B2D] border border-gray-800/40">
+                <span className="flex-1 text-center px-3 py-2 rounded-md bg-[#FF4C29]/10 border border-[#FF4C29]/30 text-xs font-medium text-[#FF4C29]">Feedback</span>
+                <span className="flex-1 text-center px-3 py-2 rounded-md text-xs text-gray-500">Changelog</span>
+                <span className="flex-1 text-center px-3 py-2 rounded-md text-xs text-gray-500">Updates</span>
               </div>
-              <pre className="text-gray-400 leading-relaxed"><code>{`<script
-  src="https://shipfeat.ai/widget.js"
-  data-key="your-project-key"
-/>`}</code></pre>
-              <div className="mt-6 pt-4 border-t border-gray-800/60">
-                <div className="flex items-center gap-2 text-xs text-emerald-400">
-                  <CheckCircle2 size={14} />
-                  <span>Widget active · 3 requests this week</span>
+              {/* Feedback form preview */}
+              <div className="space-y-3">
+                <div>
+                  <p className="text-[11px] text-gray-500 mb-1.5">What would you like to see?</p>
+                  <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-3">
+                    <p className="text-xs text-gray-300">&quot;Add a dark mode toggle to settings&quot;</p>
+                  </div>
                 </div>
+                <div className="flex justify-end">
+                  <span className="px-4 py-1.5 rounded-lg bg-[#FF4C29] text-[11px] font-semibold text-white">Submit</span>
+                </div>
+              </div>
+              {/* Embed snippet */}
+              <div className="mt-5 pt-4 border-t border-gray-800/60 font-mono">
+                <pre className="text-gray-500 text-[11px] leading-relaxed"><code>{`<script src="https://shipfeat.ai/widget.js"
+  data-key="your-project-key" />`}</code></pre>
               </div>
             </div>
           </div>
@@ -451,12 +470,20 @@ export default function Home() {
                   <span>Approve spec before code generation</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
-                  <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Review PR with full diff</span>
+                  <MessageSquareDiff size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Refine specs with natural language — iterate on the plan, not the code</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
-                  <span>Test on live preview URL before merge</span>
+                  <span>Review PR with full diff, test on live preview URL</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <GitMerge size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>One-click merge from the dashboard — squash merge, clean git history</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Shield size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Permission gating — restrict merges to admins or open to all members</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-300">
                   <ClipboardList size={16} className="text-[#FF4C29] shrink-0" />
@@ -857,7 +884,260 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature 8 — Value Delivered */}
+      {/* Feature 8 — Feasibility Gate */}
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Visual — feasibility card */}
+            <div className="order-2 lg:order-1 rounded-xl border border-gray-800/60 bg-[#0B0F19] p-6">
+              <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-5">Feasibility Analysis</p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400">HIGH</span>
+                  <span className="text-sm text-white">Likely to succeed</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] text-gray-500">Files to change</span>
+                    <span className="text-[11px] text-gray-300">3</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] text-gray-500">New files</span>
+                    <span className="text-[11px] text-gray-300">1</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] text-gray-500">Complexity</span>
+                    <span className="text-[11px] text-gray-300">Low</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] text-gray-500">Repo context</span>
+                    <span className="text-[11px] text-gray-300">12% of codebase</span>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-gray-800/60">
+                  <div className="flex items-center gap-2 text-[11px] text-emerald-400">
+                    <CheckCircle2 size={12} />
+                    <span>All checks passed — safe to build</span>
+                  </div>
+                </div>
+              </div>
+              {/* Blocked example */}
+              <div className="mt-4 rounded-lg bg-red-500/[0.05] border border-red-500/20 p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-1 rounded bg-red-500/10 border border-red-500/30 text-[10px] font-bold text-red-400">BLOCKED</span>
+                  <span className="text-[11px] text-red-400">&quot;Redesign entire dashboard layout&quot;</span>
+                </div>
+                <p className="text-[10px] text-gray-500">Too many files (24), high complexity, exceeds context budget. Recommended: break into smaller requests.</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
+                <Gauge size={20} className="text-[#FF4C29]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                ShipFeat knows when to say no
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Before any code is generated, ShipFeat analyzes the spec for
+                feasibility — file count, complexity, and how much of your
+                codebase it needs to understand. If a request is too complex,
+                it tells you upfront instead of wasting your API budget.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Gauge size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Four-tier scoring: high, medium, low, blocked</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <DollarSign size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Saves API costs on specs that would fail</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <CheckCircle2 size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Transparent scoring with detailed reasons</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <MessageSquareDiff size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Blocked? Refine the scope and re-analyze instantly</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 9 — Changelog */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="p-2.5 rounded-lg bg-[#FF4C29]/10 w-fit mb-5">
+                <FileText size={20} className="text-[#FF4C29]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                A changelog that writes itself
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Every time a feature ships, ShipFeat auto-generates a changelog
+                entry. Write manual entries for product updates with a rich text
+                editor. Publish a public, SEO-friendly changelog page your users
+                can bookmark.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Sparkles size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Auto-generated entries when features ship — zero effort</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <FileText size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Rich text editor — headings, bold, lists, links, code blocks</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Globe size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Public changelog page with SEO metadata</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Rss size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Displayed in the widget — users see updates in your app</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Calendar size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Starter: 3 manual entries/month · Pro: unlimited <span className="text-[10px] text-[#FF4C29] font-semibold ml-1">PRO</span></span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Visual — changelog feed */}
+            <div className="rounded-xl border border-gray-800/60 bg-[#0D1117] p-6 overflow-hidden">
+              <div className="flex items-center justify-between mb-5">
+                <p className="text-sm font-semibold text-white">Changelog</p>
+                <span className="text-[10px] text-gray-500">shipfeat.ai/changelog/acme/myapp</span>
+              </div>
+              <div className="space-y-4">
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">Auto-generated</span>
+                    <span className="text-[10px] text-gray-600">Mar 28, 2026</span>
+                  </div>
+                  <p className="text-sm font-medium text-white mb-1">Dark mode toggle added to settings</p>
+                  <p className="text-xs text-gray-400">Added a new dark mode toggle to the settings page, using the existing theme context. Users can now switch between light and dark themes.</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 font-medium">Manual</span>
+                    <span className="text-[10px] text-gray-600">Mar 25, 2026</span>
+                  </div>
+                  <p className="text-sm font-medium text-white mb-1">Slack integration now available</p>
+                  <p className="text-xs text-gray-400">Connect your Slack workspace to receive build notifications, spec alerts, and shipping updates in a channel of your choice.</p>
+                </div>
+                <div className="rounded-lg bg-[#141B2D] border border-gray-800/40 p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">Auto-generated</span>
+                    <span className="text-[10px] text-gray-600">Mar 22, 2026</span>
+                  </div>
+                  <p className="text-sm font-medium text-white mb-1">Search bar added to users page</p>
+                  <p className="text-xs text-gray-400">Users can now filter the users list by name or email with instant results.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 10 — Announcements */}
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Visual — 3 announcement types */}
+            <div className="order-2 lg:order-1 space-y-4">
+              {/* Banner */}
+              <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] overflow-hidden">
+                <div className="bg-[#FF4C29] px-4 py-2.5 flex items-center justify-between">
+                  <p className="text-[11px] font-medium text-white">Scheduled maintenance on March 30 at 2 AM UTC</p>
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-1 rounded bg-white/20 text-[10px] font-semibold text-white">Learn more</span>
+                    <span className="text-white/60 text-xs cursor-pointer">✕</span>
+                  </div>
+                </div>
+                <div className="px-4 py-2">
+                  <p className="text-[10px] text-gray-600 text-center">Banner — fixed at viewport top</p>
+                </div>
+              </div>
+              {/* Overlay */}
+              <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-4">
+                <div className="rounded-lg border border-gray-700 bg-[#141B2D] p-5 relative">
+                  <div className="h-1 w-full rounded-t-lg bg-amber-500 absolute top-0 left-0 right-0" />
+                  <div className="flex items-center gap-2 mb-3 mt-1">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-medium border border-amber-500/20">Heads up</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white mb-1.5">New API rate limits</p>
+                  <p className="text-xs text-gray-400 mb-3 leading-relaxed">Starting April 1, API requests are limited to 1,000/min per key. Upgrade to Pro for higher limits.</p>
+                  <div className="flex items-center gap-3">
+                    <span className="px-3 py-1.5 rounded-lg bg-amber-500 text-[11px] font-semibold text-white">View details</span>
+                    <span className="text-[11px] text-gray-500">Dismiss</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-gray-600 text-center mt-2">Overlay — centered modal or corner card</p>
+              </div>
+              {/* Toast */}
+              <div className="rounded-lg border border-gray-800/60 bg-[#0B0F19] p-4">
+                <div className="ml-auto w-72 rounded-lg border border-gray-700 bg-[#141B2D] p-3 shadow-lg">
+                  <div className="flex items-start gap-2">
+                    <div className="w-5 h-5 rounded bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 size={10} className="text-emerald-400" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[11px] font-medium text-white">v2.4 is live!</p>
+                      <p className="text-[10px] text-gray-500">New dashboard, faster builds, and more.</p>
+                    </div>
+                    <span className="text-gray-600 text-[10px] cursor-pointer shrink-0">✕</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-gray-600 text-center mt-2">Toast — subtle corner notification</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2.5 rounded-lg bg-[#FF4C29]/10">
+                  <Megaphone size={20} className="text-[#FF4C29]" />
+                </div>
+                <span className="text-[10px] font-bold text-[#FF4C29] uppercase tracking-wider px-2 py-0.5 rounded bg-[#FF4C29]/10 border border-[#FF4C29]/25">Pro</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Announce what matters — right in your app
+              </h2>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Ship a new version? Schedule maintenance? Promote a feature?
+                Create announcements that appear directly in your app through
+                the widget — as banners, overlays, or toasts. No email blasts
+                needed.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Megaphone size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Three types: banner, overlay (center/corner), toast</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Palette size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Custom colors, CTA buttons, priority badges</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <Calendar size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Schedule with start/end dates — auto-expiry built in</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <FileText size={16} className="text-[#FF4C29] shrink-0" />
+                  <span>Rich text body for overlays — full WYSIWYG editor</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 11 — Value Delivered */}
       <section className="py-24 bg-[#0D1117]">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
